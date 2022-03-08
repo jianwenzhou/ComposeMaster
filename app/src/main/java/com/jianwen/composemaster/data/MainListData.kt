@@ -7,4 +7,4 @@ package com.jianwen.composemaster.data
  * @Date 2022/3/8 0:15
  * @Des 首页列表数据类
  */
-data class MainListData(val name: String, val id: Int)
+data class MainListData(val name: String)

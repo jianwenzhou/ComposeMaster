@@ -23,7 +23,7 @@ import com.jianwen.composemaster.data.MainListData
  */
 
 @Composable
-fun MyLazyColumn(items: List<MainListData>, onClick: (Int) -> Unit) {
+fun MyLazyColumn(items: List<MainListData>, onClick: (String) -> Unit) {
 
     Column(
         modifier = Modifier
@@ -31,8 +31,8 @@ fun MyLazyColumn(items: List<MainListData>, onClick: (Int) -> Unit) {
     ) {
         LazyColumn(modifier = Modifier.fillMaxWidth()) {
             items(items) {
-                ItemCard(it.name, Modifier.clickable { onClick(it.id) })
-                Divider(thickness = 1.dp, color = MaterialTheme.colors.background)
+                ItemCard(it.name, Modifier.clickable { onClick(it.name) })
+                Divider(thickness = 1.dp, color = MaterialTheme.colors.secondaryVariant)
             }
         }
 

@@ -3,6 +3,7 @@ package com.jianwen.composemaster
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.jianwen.composemaster.data.Const
 import com.jianwen.composemaster.data.MainListData
 
 /**
@@ -19,29 +20,30 @@ class MainViewModel : ViewModel() {
     var data: LiveData<List<MainListData>> = _data
 
 
+
     init {
         _data.value = listOf(
             //布局
-            MainListData("Column",1),
-            MainListData("Row",2),
-            MainListData("Box",3),
-            MainListData("Scaffold",4),
-            MainListData("ConstraintLayout",5),
+            MainListData(Const.Column),
+            MainListData(Const.Row),
+            MainListData(Const.Box),
+            MainListData(Const.Scaffold),
+            MainListData(Const.ConstraintLayout),
             //基本组件
-            MainListData("Text",6),
-            MainListData("Icon",7),
-            MainListData("Image",8),
-            MainListData("Button",9),
-            MainListData("TextField",10),
-            MainListData("Checkbox",11),
-            MainListData("Card",12),
-            MainListData("Divider",13),
-            MainListData("FloatingActionButtons",14),
-            MainListData("ProgressIndicator",15),
-            MainListData("RadioButton",16),
+            MainListData(Const.Text),
+            MainListData(Const.Icon),
+            MainListData(Const.Image),
+            MainListData(Const.Button),
+            MainListData(Const.TextField),
+            MainListData(Const.Checkbox),
+            MainListData(Const.Card),
+            MainListData(Const.Divider),
+            MainListData(Const.FloatingActionButtons),
+            MainListData(Const.ProgressIndicator),
+            MainListData(Const.RadioButton),
             //滚动布局
-            MainListData("LazyRow",17),
-            MainListData("LazyColumn",18),
+            MainListData(Const.LazyRow),
+            MainListData(Const.LazyColumn),
             //动画
 
 

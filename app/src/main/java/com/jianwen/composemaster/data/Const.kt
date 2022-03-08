@@ -4,8 +4,8 @@ package com.jianwen.composemaster.data
  * @ProjectName ComposeMaster
  * @PackageName com.jianwen.composemaster.data
  * @Author jianwen.zhou
- * @Date 2022/3/8 13:41
- * @Des
+ * @Date 2022/3/8 20:00
+ * @Des compose 类型
  */
 object Const {
 

@@ -27,6 +27,7 @@ object Const {
     const val FloatingActionButtons = "FloatingActionButtons"
     const val ProgressIndicator = "ProgressIndicator"
     const val RadioButton = "RadioButton"
+    const val Spacer = "Spacer"
 
     const val LazyRow = "LazyRow"
     const val LazyColumn = "LazyColumn"

@@ -1,17 +1,22 @@
 package com.jianwen.composemaster.ui.layout
 
+import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Divider
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.VerticalAlignmentLine
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.jianwen.composemaster.data.MainListData
 
 /**
@@ -22,6 +27,7 @@ import com.jianwen.composemaster.data.MainListData
  * @Des 垂直列表
  */
 
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun MyLazyColumn(items: List<MainListData>, onClick: (String) -> Unit) {
 
@@ -30,17 +36,52 @@ fun MyLazyColumn(items: List<MainListData>, onClick: (String) -> Unit) {
             .fillMaxWidth()
     ) {
         LazyColumn(modifier = Modifier.fillMaxWidth()) {
-            items(items) {
-                ItemCard(it.name, Modifier.clickable { onClick(it.name) })
-                Divider(thickness = 1.dp, color = MaterialTheme.colors.secondaryVariant)
+            items.forEach {
+                stickyHeader {
+                    ListTitle(title = it.title)
+                }
+                items(it.datas) { data ->
+                    ItemCard(data) { name -> onClick(name) }
+                    Divider(thickness = 1.dp, color = MaterialTheme.colors.onSurface.copy(0.1f))
+                }
             }
         }
-
     }
-
 }
 
 @Composable
-fun ItemCard(it: String, modifier: Modifier) {
-    Text(text = it, modifier = modifier.padding(16.dp), style = MaterialTheme.typography.h6)
+fun ListTitle(title: String, modifier: Modifier = Modifier) {
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
+        modifier = modifier
+            .fillMaxWidth()
+            .height(60.dp)
+            .background(MaterialTheme.colors.onSurface.copy(0.1f))
+            .padding(start = 16.dp),
+    ) {
+        Text(
+            text = title,
+            textAlign = TextAlign.Center,
+            style = MaterialTheme.typography.h6,
+            fontWeight = FontWeight.Bold,
+        )
+    }
+}
+
+@Composable
+fun ItemCard(name: String, modifier: Modifier = Modifier, onClick: (String) -> Unit) {
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
+        modifier = modifier
+            .fillMaxWidth()
+            .height(60.dp)
+            .clickable { onClick(name) }
+            .padding(start = 16.dp),
+    ) {
+        Text(
+            text = name,
+            textAlign = TextAlign.Center,
+            fontSize = 18.sp,
+        )
+    }
 }

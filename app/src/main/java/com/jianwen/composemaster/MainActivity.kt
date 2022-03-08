@@ -17,7 +17,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             ComposeMasterTheme {
-                val observeAsState = model.data.observeAsState()
+                val observeAsState = model.datas.observeAsState()
                 MyLazyColumn(observeAsState.value!!) { type ->
                     onItemClick(type)
                 }

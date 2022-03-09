@@ -9,6 +9,13 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.jianwen.composemaster.R
 
+/**
+ * @ProjectName ComposeMaster
+ * @PackageName com.jianwen.composemaster.ui.layout
+ * @Author jianwen.zhou
+ * @Date 2022/3/8 20:42
+ * @Des Column，垂直布局
+ */
 @Composable
 fun MyColumn() {
     Column {

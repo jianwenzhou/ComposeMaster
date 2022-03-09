@@ -20,8 +20,10 @@ import com.jianwen.composemaster.R
  * @PackageName com.jianwen.composemaster.ui.layout
  * @Author jianwen.zhou
  * @Date 2022/3/9 20:42
- * @Des Modifier.verticalScroll 垂直滑动
+ * @Des 类似原生View的scrollView
+ *      Modifier.verticalScroll 垂直滑动
  *      Modifier.horizontalScroll 横向滑动
+ *      底层通过重组实现滑动
  */
 @Composable
 fun MyScrollView() {

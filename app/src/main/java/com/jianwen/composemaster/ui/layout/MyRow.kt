@@ -10,6 +10,13 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.jianwen.composemaster.R
 
+/**
+ * @ProjectName ComposeMaster
+ * @PackageName com.jianwen.composemaster.ui.layout
+ * @Author jianwen.zhou
+ * @Date 2022/3/8 20:50
+ * @Des Row，横向布局
+ */
 @Composable
 fun MyRow() {
     Row(verticalAlignment = Alignment.CenterVertically) {

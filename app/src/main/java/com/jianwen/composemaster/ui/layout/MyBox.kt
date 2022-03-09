@@ -12,6 +12,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
+/**
+ * @ProjectName ComposeMaster
+ * @PackageName com.jianwen.composemaster.ui.layout
+ * @Author jianwen.zhou
+ * @Date 2022/3/8 21:42
+ * @Des Box，嵌套布局，类似原生View的帧布局。
+ */
 @Composable
 fun MyBox() {
     Box(

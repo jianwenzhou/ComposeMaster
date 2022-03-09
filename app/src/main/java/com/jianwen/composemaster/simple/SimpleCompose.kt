@@ -55,10 +55,13 @@ fun SimpleCompose(type: String?) {
             MyCard()
         }
         Const.Divider -> {
+            MyDivider()
         }
         Const.FloatingActionButtons -> {
+            MyFloatingActionButtons()
         }
         Const.ProgressIndicator -> {
+            MyProgressIndicator()
         }
         Const.RadioButton -> {
         }
@@ -69,6 +72,7 @@ fun SimpleCompose(type: String?) {
 
     }
 }
+
 
 
 

@@ -21,6 +21,13 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.jianwen.composemaster.R
 
+/**
+ * @ProjectName ComposeMaster
+ * @PackageName com.jianwen.composemaster.ui.layout
+ * @Author jianwen.zhou
+ * @Date 2022/3/8 21:42
+ * @Des Text，原生View的TextView
+ */
 @Composable
 fun MyText() {
     val scrollState = rememberScrollState()

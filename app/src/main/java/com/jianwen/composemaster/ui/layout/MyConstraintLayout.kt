@@ -24,18 +24,26 @@ import androidx.constraintlayout.compose.Dimension
 import com.jianwen.composemaster.R
 
 
-
+/**
+ * @ProjectName ComposeMaster
+ * @PackageName com.jianwen.composemaster.ui.layout
+ * @Author jianwen.zhou
+ * @Date 2022/3/9 20:42
+ * @Des 约束布局,需要新增依赖(implementation 'androidx.constraintlayout:constraintlayout-compose:1.0.0')
+ * 详情看下述代码以及注解
+ */
 @Composable
 fun MyConstraintLayout() {
     ConstraintLayout(Modifier.fillMaxSize()) {
-        //通过createRefs创建三个引用
+        //第一步:通过createRefs创建三个引用
         val (imageRef, nameRef, descRef) = createRefs()
 
         Image(painter = painterResource(id = R.mipmap.main),
             contentDescription = "dog avatar",
             modifier = Modifier
+                //第二步:通过constrainAs将Image与imageRef绑定
                 .constrainAs(imageRef) {
-                    //通过constrainAs将Image与imageRef绑定,并增加约束
+                    //第三步:Image控件增加约束
                     top.linkTo(parent.top)
                     start.linkTo(parent.start)
                     bottom.linkTo(parent.bottom)
@@ -49,12 +57,13 @@ fun MyConstraintLayout() {
             text = stringResource(id = R.string.test_string),
             modifier = Modifier
                 .constrainAs(nameRef) {
+                    //第四步:Text控件增加约束,同时设置边距
                     top.linkTo(imageRef.top)
                     bottom.linkTo(imageRef.bottom)
                     //约束同时添加边距
                     start.linkTo(imageRef.end, 12.dp)
                     end.linkTo(parent.end)
-                    //规避文字过长导致挤压布局问题
+                    //规避文字过长导致挤压布局问题,重要
                     width = Dimension.fillToConstraints
                 }
                 .fillMaxWidth(),
@@ -69,6 +78,7 @@ fun MyConstraintLayout() {
 
         Text(text = stringResource(id = R.string.test_string), modifier = Modifier
             .constrainAs(descRef) {
+                //第四步:Text控件增加约束,同时设置边距
                 top.linkTo(nameRef.bottom, 5.dp)
                 start.linkTo(nameRef.start)
                 end.linkTo(parent.end)

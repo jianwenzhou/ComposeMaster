@@ -49,8 +49,10 @@ fun SimpleCompose(type: String?) {
             MyTextField()
         }
         Const.Checkbox -> {
+            MyCheckbox()
         }
         Const.Card -> {
+            MyCard()
         }
         Const.Divider -> {
         }
@@ -67,5 +69,6 @@ fun SimpleCompose(type: String?) {
 
     }
 }
+
 
 

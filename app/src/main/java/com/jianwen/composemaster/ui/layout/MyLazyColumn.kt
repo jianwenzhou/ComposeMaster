@@ -12,9 +12,9 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.layout.VerticalAlignmentLine
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.jianwen.composemaster.data.MainListData
@@ -25,6 +25,9 @@ import com.jianwen.composemaster.data.MainListData
  * @Author jianwen.zhou
  * @Date 2022/3/6 0:16
  * @Des 垂直列表
+ * LazyColumn:类似垂直滑动的RecyclerView,有懒加载效果.
+ * stickyHeader:吸顶效果
+ * items:遍历集合,组合item
  */
 
 @OptIn(ExperimentalFoundationApi::class)
@@ -84,4 +87,41 @@ fun ItemCard(name: String, modifier: Modifier = Modifier, onClick: (String) -> U
             fontSize = 18.sp,
         )
     }
+}
+
+
+@Preview
+@Composable
+fun MyLazyColumnPreview() {
+    MyLazyColumn(
+        listOf(
+            MainListData(
+                "PreView",
+                listOf(
+                    "11111",
+                    "22222",
+                    "11111",
+                    "22222",
+                    "11111",
+                    "22222",
+                    "11111",
+                    "22222",
+                    "11111",
+                    "22222",
+                    "11111",
+                    "22222",
+                    "11111",
+                    "22222",
+                    "11111",
+                    "22222",
+                    "11111",
+                    "22222",
+                    "11111",
+                    "22222",
+                    "11111",
+                    "22222",
+                )
+            ),
+        )
+    ) {}
 }

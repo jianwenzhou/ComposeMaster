@@ -1,9 +1,11 @@
 package com.jianwen.composemaster.ui.layout
 
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.MaterialTheme.colors
 import androidx.compose.material.Text
@@ -14,13 +16,19 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.jianwen.composemaster.R
 
 @Composable
 fun MyText() {
-    Column(Modifier.fillMaxSize()) {
+    val scrollState = rememberScrollState()
+    Column(
+        Modifier
+            .fillMaxSize()
+            .horizontalScroll(scrollState)
+    ) {
         Text(
             text = stringResource(id = R.string.test_string),
             modifier = Modifier.padding(8.dp),
@@ -74,4 +82,10 @@ fun MyText() {
             style = MaterialTheme.typography.h4
         )
     }
+}
+
+@Preview
+@Composable
+fun MyTextPreview() {
+    MyText()
 }

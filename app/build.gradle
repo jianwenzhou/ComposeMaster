@@ -62,7 +62,7 @@ dependencies {
 
     implementation "com.google.accompanist:accompanist-pager:0.21.1-beta"
 
-    //constraintlayout
+    //constraintLayout
     implementation 'androidx.constraintlayout:constraintlayout-compose:1.0.0'
 
     //observeAsState()需要
@@ -73,6 +73,8 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 
+    //图片加载
+    implementation("io.coil-kt:coil-compose:2.0.0-rc01")
 
 
 }

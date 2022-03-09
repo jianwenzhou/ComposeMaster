@@ -7,6 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import com.jianwen.composemaster.R
 
 @Composable
@@ -19,4 +20,10 @@ fun MyRow() {
         )
         Text(text = stringResource(R.string.test_string))
     }
+}
+
+@Preview
+@Composable
+fun MyRowPreview(){
+    MyRow()
 }

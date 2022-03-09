@@ -15,6 +15,7 @@ object Const {
     const val Box = "Box"
     const val Scaffold = "Scaffold"
     const val ConstraintLayout = "ConstraintLayout"
+    const val ScrollView = "ScrollView"
 
     const val Text = "Text"
     const val Icon = "Icon"

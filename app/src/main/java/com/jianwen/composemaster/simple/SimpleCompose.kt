@@ -30,16 +30,23 @@ fun SimpleCompose(type: String?) {
         Const.ConstraintLayout -> {
             MyConstraintLayout()
         }
+        Const.ScrollView -> {
+            MyScrollView()
+        }
         Const.Text -> {
             MyText()
         }
         Const.Icon -> {
+            MyIcon()
         }
         Const.Image -> {
+            MyImage()
         }
         Const.Button -> {
+            MyButton()
         }
         Const.TextField -> {
+            MyTextField()
         }
         Const.Checkbox -> {
         }
@@ -60,4 +67,5 @@ fun SimpleCompose(type: String?) {
 
     }
 }
+
 

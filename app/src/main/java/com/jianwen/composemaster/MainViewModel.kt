@@ -1,6 +1,5 @@
 package com.jianwen.composemaster
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.jianwen.composemaster.data.Const
@@ -28,6 +27,7 @@ class MainViewModel : ViewModel() {
                     Const.Box,
                     Const.Scaffold,
                     Const.ConstraintLayout,
+                    Const.ScrollView,
                 )
             ),
             MainListData(

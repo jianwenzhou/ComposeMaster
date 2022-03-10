@@ -6,7 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.compose.runtime.livedata.observeAsState
 import com.jianwen.composemaster.simple.SimpleActivity
-import com.jianwen.composemaster.ui.layout.MyLazyColumn
+import com.jianwen.composemaster.ui.layout.MainCompose
 import com.jianwen.composemaster.ui.theme.ComposeMasterTheme
 
 class MainActivity : ComponentActivity() {
@@ -18,7 +18,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             ComposeMasterTheme {
                 val observeAsState = model.datas.observeAsState()
-                MyLazyColumn(observeAsState.value!!) { type ->
+                MainCompose(observeAsState.value!!) { type ->
                     onItemClick(type)
                 }
             }

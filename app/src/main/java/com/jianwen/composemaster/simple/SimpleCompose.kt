@@ -64,12 +64,14 @@ fun SimpleCompose(type: String?) {
             MyProgressIndicator()
         }
         Const.RadioButton -> {
+            MyRadioButton()
         }
         Const.LazyRow -> {
+            MyLazyRow()
         }
         Const.LazyColumn -> {
+            MyLazyColumn()
         }
-
     }
 }
 

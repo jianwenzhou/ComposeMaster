@@ -106,6 +106,7 @@ private fun OwlTheme(
 ) {
     val elevation = if (darkTheme) DarkElevation else LightElevation
     val images = if (darkTheme) DarkImages else LightImages
+    //compose中非常重要的隐式传参,在MaterialTheme包裹下,都可以通过LocalImages.current.lockupLogo获取到值!!!
     CompositionLocalProvider(
         LocalElevations provides elevation,
         LocalImages provides images

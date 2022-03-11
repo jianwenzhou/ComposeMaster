@@ -54,8 +54,11 @@ class MainViewModel : ViewModel() {
                     Const.SwipeToRefreshLayout,
                 )
             ),
-
-            //动画
+            MainListData(
+                "动画", listOf(
+                    Const.Animate,
+                )
+            ),
 
 
             //数据流

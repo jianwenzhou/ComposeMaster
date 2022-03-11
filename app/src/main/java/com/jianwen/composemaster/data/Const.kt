@@ -9,7 +9,7 @@ package com.jianwen.composemaster.data
  */
 object Const {
 
-
+    //容器
     const val Column = "Column"
     const val Row = "Row"
     const val Box = "Box"
@@ -17,6 +17,7 @@ object Const {
     const val ConstraintLayout = "ConstraintLayout"
     const val ScrollView = "ScrollView"
 
+    //常用组件
     const val Text = "Text"
     const val Icon = "Icon"
     const val Image = "Image"
@@ -30,10 +31,16 @@ object Const {
     const val RadioButton = "RadioButton"
     const val Spacer = "Spacer"
 
-
+    //列表
     const val LazyRow = "LazyRow"
     const val LazyColumn = "LazyColumn"
     const val SwipeToRefreshLayout = "SwipeToRefreshLayout"
+
+    //动画
+    const val Animate = "Animate"
+
+    //主题
+
 
 }
 

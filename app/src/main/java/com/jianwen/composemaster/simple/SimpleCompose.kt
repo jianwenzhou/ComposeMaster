@@ -75,6 +75,9 @@ fun SimpleCompose(type: String?) {
         Const.SwipeToRefreshLayout -> {
             MySwipeToRefreshLayout()
         }
+        Const.Animate -> {
+            MyAnimate()
+        }
 
     }
 }

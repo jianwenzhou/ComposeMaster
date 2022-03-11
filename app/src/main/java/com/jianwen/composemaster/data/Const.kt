@@ -40,7 +40,7 @@ object Const {
     const val Animate = "Animate"
 
     //主题
-
+    const val Theme = "Theme"
 
 }
 

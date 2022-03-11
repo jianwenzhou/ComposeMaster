@@ -60,11 +60,16 @@ class MainViewModel : ViewModel() {
                 )
             ),
 
+            MainListData(
+                "主题", listOf(
+                    Const.Theme,
+                )
+            ),
 
             //数据流
 
 
-            //android
+            //androidView
 
         )
     }

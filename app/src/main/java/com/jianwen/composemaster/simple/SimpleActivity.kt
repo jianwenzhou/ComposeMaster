@@ -6,6 +6,9 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
+import androidx.compose.ui.unit.dp
 import com.jianwen.composemaster.data.Const
 import com.jianwen.composemaster.ui.theme.PinkTheme
 
@@ -25,7 +28,12 @@ class SimpleActivity : ComponentActivity() {
         initData(type)
         setContent {
             PinkTheme {
-                SimpleCompose(type)
+                Surface(
+                    elevation = 2.dp,
+                    color = MaterialTheme.colors.surface,
+                ) {
+                    SimpleCompose(type)
+                }
             }
         }
     }

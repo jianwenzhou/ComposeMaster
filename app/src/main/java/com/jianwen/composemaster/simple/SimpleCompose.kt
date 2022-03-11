@@ -78,9 +78,13 @@ fun SimpleCompose(type: String?) {
         Const.Animate -> {
             MyAnimate()
         }
+        Const.Theme -> {
+            MyTheme()
+        }
 
     }
 }
+
 
 
 

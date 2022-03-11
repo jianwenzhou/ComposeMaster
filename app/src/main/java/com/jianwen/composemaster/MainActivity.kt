@@ -4,7 +4,10 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
 import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.ui.unit.dp
 import com.jianwen.composemaster.simple.SimpleActivity
 import com.jianwen.composemaster.ui.layout.MainCompose
 import com.jianwen.composemaster.ui.theme.YellowTheme
@@ -18,9 +21,17 @@ class MainActivity : ComponentActivity() {
         setContent {
             YellowTheme {
                 val observeAsState = model.datas.observeAsState()
-                MainCompose(observeAsState.value!!) { type ->
-                    onItemClick(type)
+
+                Surface(
+                    elevation = 2.dp,
+                    color = MaterialTheme.colors.surface,
+                ) {
+                    MainCompose(observeAsState.value!!) { type ->
+                        onItemClick(type)
+                    }
                 }
+
+
             }
         }
     }

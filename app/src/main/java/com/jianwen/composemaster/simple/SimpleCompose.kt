@@ -72,6 +72,10 @@ fun SimpleCompose(type: String?) {
         Const.LazyColumn -> {
             MyLazyColumn()
         }
+        Const.SwipeToRefreshLayout -> {
+            MySwipeToRefreshLayout()
+        }
+
     }
 }
 

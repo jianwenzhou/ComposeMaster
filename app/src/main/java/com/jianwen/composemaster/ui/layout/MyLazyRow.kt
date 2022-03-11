@@ -22,8 +22,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
-import com.jianwen.composemaster.R
 import com.jianwen.composemaster.simple.SimpleViewModel
+import com.jianwen.composemaster.ui.theme.LocalImages
 
 /**
  * @ProjectName ComposeMaster
@@ -86,7 +86,7 @@ fun NetImageCard(title: String, url: String, modifier: Modifier = Modifier) {
     ) {
         AsyncImage(
             model = url,
-            placeholder = painterResource(R.drawable.ic_launcher_background),
+            placeholder = painterResource(LocalImages.current.lockupLogo),
             contentDescription = "",
             contentScale = ContentScale.Crop,
             modifier = Modifier

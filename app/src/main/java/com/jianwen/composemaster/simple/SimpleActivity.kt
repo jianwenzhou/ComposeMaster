@@ -7,7 +7,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import com.jianwen.composemaster.data.Const
-import com.jianwen.composemaster.ui.theme.ComposeMasterTheme
+import com.jianwen.composemaster.ui.theme.PinkTheme
 
 class SimpleActivity : ComponentActivity() {
 
@@ -24,7 +24,7 @@ class SimpleActivity : ComponentActivity() {
         val type = intent.getStringExtra("type")
         initData(type)
         setContent {
-            ComposeMasterTheme {
+            PinkTheme {
                 SimpleCompose(type)
             }
         }
@@ -32,7 +32,7 @@ class SimpleActivity : ComponentActivity() {
 
     private fun initData(type: String?) {
         val model: SimpleViewModel by viewModels()
-        if (type == Const.LazyRow || type == Const.LazyColumn) {
+        if (type == Const.LazyRow || type == Const.LazyColumn || type == Const.SwipeToRefreshLayout) {
             model.getImageList()
         }
     }

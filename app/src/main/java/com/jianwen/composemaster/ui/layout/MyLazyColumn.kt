@@ -35,9 +35,9 @@ fun MyLazyColumn(model: SimpleViewModel = viewModel()) {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        LazyColumn {
-            items(observeAsState.value) {
-                MyNetImageCard(it.tags, it.largeImageURL)
+        LazyColumn() {
+            items(observeAsState.value) { data ->
+                MyNetImageCard(data.tags, data.largeImageURL)
             }
         }
 

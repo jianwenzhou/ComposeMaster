@@ -7,7 +7,7 @@ import androidx.activity.viewModels
 import androidx.compose.runtime.livedata.observeAsState
 import com.jianwen.composemaster.simple.SimpleActivity
 import com.jianwen.composemaster.ui.layout.MainCompose
-import com.jianwen.composemaster.ui.theme.ComposeMasterTheme
+import com.jianwen.composemaster.ui.theme.YellowTheme
 
 class MainActivity : ComponentActivity() {
 
@@ -16,7 +16,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            ComposeMasterTheme {
+            YellowTheme {
                 val observeAsState = model.datas.observeAsState()
                 MainCompose(observeAsState.value!!) { type ->
                     onItemClick(type)

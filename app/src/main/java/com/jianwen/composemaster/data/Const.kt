@@ -30,8 +30,10 @@ object Const {
     const val RadioButton = "RadioButton"
     const val Spacer = "Spacer"
 
+
     const val LazyRow = "LazyRow"
     const val LazyColumn = "LazyColumn"
+    const val SwipeToRefreshLayout = "SwipeToRefreshLayout"
 
 }
 

@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Project/user/Compose/ComposeMaster/app/src/main/res/drawable/ic_______1.xml" value="0.2005" />
+        <entry key="..\:/Project/user/Compose/ComposeMaster/app/src/main/res/drawable/ic_drak.xml" value="0.2005" />
+        <entry key="..\:/Project/user/Compose/ComposeMaster/app/src/main/res/drawable/ic_light.xml" value="0.2005" />
+        <entry key="..\:/Project/user/Compose/ComposeMaster/app/src/main/res/drawable/ic_lockup_blue.xml" value="0.2005" />
+        <entry key="..\:/Project/user/Compose/ComposeMaster/app/src/main/res/drawable/ic_lockup_white.xml" value="0.2005" />
         <entry key="..\:/Project/user/Compose/ComposeMaster/app/src/main/res/layout/base_fragment_layout.xml" value="0.3536458333333333" />
         <entry key="..\:/Project/user/Compose/ComposeMaster/app/src/main/res/layout/main_activity_layout.xml" value="0.3122238586156112" />
       </map>

@@ -8,86 +8,59 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.jianwen.composemaster.R
 
-private val YellowThemeLight = lightColors(
-    primary = yellow500,
-    primaryVariant = yellow400,
-    onPrimary = Color.Black,
-    secondary = blue700,
-    secondaryVariant = blue800,
-    onSecondary = Color.White
+val zThemeLight = lightColors(
+    primary = zPrimary,
+    primaryVariant = zPrimaryLight,
+    secondary = zSecondary,
+    secondaryVariant = zSecondaryLight
 )
 
-private val YellowThemeDark = darkColors(
-    primary = yellow200,
-    secondary = blue200,
-    onSecondary = Color.Black,
-    surface = yellowDarkPrimary
+val zThemeDark = darkColors(
+    primary = zPrimary,
+    primaryVariant = zPrimaryDark,
+    secondary = zSecondary,
+    secondaryVariant = zSecondaryDark
 )
 
 @Composable
-fun YellowTheme(
+fun ZTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit
 ) {
     val colors = if (darkTheme) {
-        YellowThemeDark
+        zThemeDark
     } else {
-        YellowThemeLight
+        zThemeLight
     }
-    OwlTheme(darkTheme, colors, content)
+    MyComposeTheme(darkTheme, colors, content)
 }
 
-private val BlueThemeLight = lightColors(
-    primary = blue700,
-    onPrimary = Color.White,
-    primaryVariant = blue800,
-    secondary = yellow500
+
+val jThemeLight = lightColors(
+    primary = jPrimary,
+    primaryVariant = jPrimaryLight,
+    secondary = jSecondary,
+    secondaryVariant = jSecondaryLight
 )
 
-private val BlueThemeDark = darkColors(
-    primary = blue200,
-    secondary = yellow200,
-    surface = blueDarkPrimary
+val jThemeDark = darkColors(
+    primary = jPrimary,
+    primaryVariant = jPrimaryDark,
+    secondary = jSecondary,
+    secondaryVariant = jSecondaryDark
 )
 
 @Composable
-fun BlueTheme(
+fun JTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit
 ) {
     val colors = if (darkTheme) {
-        BlueThemeDark
+        jThemeDark
     } else {
-        BlueThemeLight
+        jThemeLight
     }
-    OwlTheme(darkTheme, colors, content)
-}
-
-private val PinkThemeLight = lightColors(
-    primary = pink500,
-    secondary = pink500,
-    primaryVariant = pink600,
-    onPrimary = Color.Black,
-    onSecondary = Color.Black
-)
-
-private val PinkThemeDark = darkColors(
-    primary = pink200,
-    secondary = pink200,
-    surface = pinkDarkPrimary
-)
-
-@Composable
-fun PinkTheme(
-    darkTheme: Boolean = isSystemInDarkTheme(),
-    content: @Composable () -> Unit
-) {
-    val colors = if (darkTheme) {
-        PinkThemeDark
-    } else {
-        PinkThemeLight
-    }
-    OwlTheme(darkTheme, colors, content)
+    MyComposeTheme(darkTheme, colors, content)
 }
 
 private val LightElevation = Elevations()
@@ -99,8 +72,8 @@ private val LightImages = Images(lockupLogo = R.drawable.ic_drak)
 private val DarkImages = Images(lockupLogo = R.drawable.ic_light)
 
 @Composable
-private fun OwlTheme(
-    darkTheme: Boolean,
+fun MyComposeTheme(
+    darkTheme: Boolean = isSystemInDarkTheme(),
     colors: Colors,
     content: @Composable () -> Unit
 ) {
@@ -161,3 +134,4 @@ object OwlTheme {
         @Composable
         get() = LocalImages.current
 }
+

@@ -10,9 +10,10 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.ui.unit.dp
 import com.jianwen.composemaster.data.Const
-import com.jianwen.composemaster.ui.theme.PinkTheme
+import com.jianwen.composemaster.ui.theme.MyComposeTheme
 
 class SimpleActivity : ComponentActivity() {
+    private val model: SimpleViewModel by viewModels()
 
     companion object {
         fun start(context: Context, type: String) {
@@ -27,7 +28,7 @@ class SimpleActivity : ComponentActivity() {
         val type = intent.getStringExtra("type")
         initData(type)
         setContent {
-            PinkTheme {
+            MyComposeTheme(colors = model.theme) {
                 Surface(
                     elevation = 2.dp,
                     color = MaterialTheme.colors.surface,
@@ -39,7 +40,6 @@ class SimpleActivity : ComponentActivity() {
     }
 
     private fun initData(type: String?) {
-        val model: SimpleViewModel by viewModels()
         if (type == Const.LazyRow || type == Const.LazyColumn || type == Const.SwipeToRefreshLayout) {
             model.getImageList()
         }

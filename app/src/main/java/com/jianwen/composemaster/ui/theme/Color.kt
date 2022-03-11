@@ -5,20 +5,19 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.compositeOver
 
-val yellow200 = Color(0xffffeb46)
-val yellow400 = Color(0xffffc000)
-val yellow500 = Color(0xffffde03)
-val yellowDarkPrimary = Color(0xff242316)
+val zPrimary = Color(0xffffe082)
+val zPrimaryLight = Color(0xffffffb3)
+val zPrimaryDark = Color(0xffcaae53)
+val zSecondary = Color(0xffff8f00)
+val zSecondaryLight = Color(0xffffc046)
+val zSecondaryDark = Color(0xffc56000)
 
-val blue200 = Color(0xff91a4fc)
-val blue700 = Color(0xff0336ff)
-val blue800 = Color(0xff0035c9)
-val blueDarkPrimary = Color(0xff1c1d24)
-
-val pink200 = Color(0xffff7597)
-val pink500 = Color(0xffff0266)
-val pink600 = Color(0xffd8004d)
-val pinkDarkPrimary = Color(0xff24191c)
+val jPrimary = Color(0xffe91e63)
+val jPrimaryLight = Color(0xffff6090)
+val jPrimaryDark = Color(0xffb0003a)
+val jSecondary = Color(0xffef5350)
+val jSecondaryLight = Color(0xffff867c)
+val jSecondaryDark = Color(0xb61827)
 
 /**
  * Return the fully opaque color that results from compositing [onSurface] atop [surface] with the

@@ -13,12 +13,11 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.jianwen.composemaster.R
-import com.jianwen.composemaster.ui.theme.pink200
-import com.jianwen.composemaster.ui.theme.yellow200
 
 @Composable
 fun MyAnimate() {
@@ -26,6 +25,7 @@ fun MyAnimate() {
     Column(
         modifier = Modifier
             .fillMaxSize()
+            .padding(bottom = 20.dp)
             .verticalScroll(rememberScrollState()) //垂直滚动
     ) {
         //展示隐藏动画1
@@ -103,7 +103,7 @@ fun VisibleAnim3() {
             .fillMaxWidth(),
         verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        val backgroundColor by animateColorAsState(if (isChange) yellow200 else pink200)
+        val backgroundColor by animateColorAsState(if (isChange) Color.Red else Color.Yellow)
 
         Box(
             Modifier

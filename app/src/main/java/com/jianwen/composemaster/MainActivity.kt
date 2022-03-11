@@ -10,7 +10,7 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.unit.dp
 import com.jianwen.composemaster.simple.SimpleActivity
 import com.jianwen.composemaster.ui.layout.MainCompose
-import com.jianwen.composemaster.ui.theme.YellowTheme
+import com.jianwen.composemaster.ui.theme.ZTheme
 
 class MainActivity : ComponentActivity() {
 
@@ -19,7 +19,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            YellowTheme {
+            ZTheme {
                 val observeAsState = model.datas.observeAsState()
 
                 Surface(

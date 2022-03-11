@@ -1,5 +1,8 @@
 package com.jianwen.composemaster.simple
 
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.jianwen.composemaster.net.api.const.NetConst
@@ -7,6 +10,10 @@ import com.jianwen.composemaster.net.api.entity.Hit
 import com.jianwen.composemaster.net.api.entity.ImageEntity
 import com.jianwen.composemaster.net.api.manager.ApiFactory
 import com.jianwen.composemaster.net.api.manager.CallBackWrapper
+import com.jianwen.composemaster.ui.theme.jThemeDark
+import com.jianwen.composemaster.ui.theme.jThemeLight
+import com.jianwen.composemaster.ui.theme.zThemeDark
+import com.jianwen.composemaster.ui.theme.zThemeLight
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -66,4 +73,26 @@ class SimpleViewModel : ViewModel() {
     }
     //*************end*************/
 
+
+    //************theme*************/
+    var theme by mutableStateOf(zThemeLight)
+    fun changeTheme() {
+        when (theme) {
+            zThemeLight -> {
+                theme = zThemeDark
+            }
+            zThemeDark -> {
+                theme = jThemeLight
+            }
+            jThemeLight -> {
+                theme = jThemeDark
+            }
+            jThemeDark -> {
+                theme = zThemeLight
+            }
+        }
+    }
+
+
+    //*************end*************/
 }

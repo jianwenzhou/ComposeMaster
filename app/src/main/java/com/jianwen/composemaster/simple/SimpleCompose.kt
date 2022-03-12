@@ -81,6 +81,9 @@ fun SimpleCompose(type: String?) {
         Const.Theme -> {
             MyTheme()
         }
+        Const.Video -> {
+            MyVideo()
+        }
 
     }
 }

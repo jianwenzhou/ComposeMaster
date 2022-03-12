@@ -64,12 +64,17 @@ class MainViewModel : ViewModel() {
                 "主题", listOf(
                     Const.Theme,
                 )
+
             ),
 
+            MainListData(
+                "Compose中使用View控件", listOf(
+                    Const.Video,
+                )
+            ),
+
+
             //数据流
-
-
-            //androidView
 
         )
     }

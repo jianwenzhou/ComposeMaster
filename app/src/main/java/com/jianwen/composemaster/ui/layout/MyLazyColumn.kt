@@ -42,11 +42,7 @@ fun MyLazyColumn(model: SimpleViewModel = viewModel()) {
         }
 
         if (observeAsState.value.isEmpty()) {
-            LinearProgressIndicator(
-                modifier = Modifier.size(width = 80.dp, height = 5.dp),
-                color = MaterialTheme.colors.primary,
-                backgroundColor = MaterialTheme.colors.primary.copy(0.4f)
-            )
+            MyLinearProgressIndicator()
         }
     }
 

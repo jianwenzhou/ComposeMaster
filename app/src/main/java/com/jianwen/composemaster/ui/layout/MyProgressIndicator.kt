@@ -3,6 +3,7 @@ package com.jianwen.composemaster.ui.layout
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.LinearProgressIndicator
+import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -30,9 +31,15 @@ fun MyProgressIndicator() {
 
         Spacer(modifier = Modifier.size(20.dp))
 
-        LinearProgressIndicator(
-            modifier = Modifier.size(width = 80.dp, height = 10.dp), color = Color.Yellow,
-            backgroundColor = Color.Yellow.copy(0.5f)
-        )
+        MyLinearProgressIndicator()
     }
+}
+
+@Composable
+fun MyLinearProgressIndicator() {
+    LinearProgressIndicator(
+        modifier = Modifier.size(width = 80.dp, height = 5.dp),
+        color = MaterialTheme.colors.primary,
+        backgroundColor = MaterialTheme.colors.primary.copy(0.4f)
+    )
 }

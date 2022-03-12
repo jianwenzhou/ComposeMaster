@@ -42,5 +42,8 @@ object Const {
     //主题
     const val Theme = "Theme"
 
+    //compose中使用原生View控件
+    const val Video = "Video"
+
 }
 

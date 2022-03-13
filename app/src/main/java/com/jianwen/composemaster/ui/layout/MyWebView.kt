@@ -27,7 +27,7 @@ import com.jianwen.composemaster.ui.layout.LoadingState.Loading
  * @sample com.google.accompanist.sample.webview.BasicWebViewSample
  */
 @Composable
-fun WebView(
+fun MyWebView(
     state: WebViewState,
     modifier: Modifier = Modifier,
     captureBackPresses: Boolean = true,

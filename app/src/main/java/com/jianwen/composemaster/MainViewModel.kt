@@ -70,6 +70,7 @@ class MainViewModel : ViewModel() {
             MainListData(
                 "Compose中使用View控件", listOf(
                     Const.Video,
+                    Const.WebView,
                 )
             ),
 

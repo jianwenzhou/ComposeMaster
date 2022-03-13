@@ -84,6 +84,10 @@ fun SimpleCompose(type: String?) {
         Const.Video -> {
             MyVideo()
         }
+        Const.WebView -> {
+            val state = rememberWebViewState(url = "https://developer.android.google.cn/")
+            MyWebView(state = state,captureBackPresses = true)
+        }
 
     }
 }

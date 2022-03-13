@@ -56,13 +56,15 @@ private fun PlayVideo(uri: Uri) {
         //生命周期管理
         val videoView = getVideoViewBindLifecycle()
 
-        AndroidView(modifier = Modifier.clickable {
-            if (videoView.isPlaying) {
-                videoView.pause()
-            } else {
-                videoView.start()
-            }
-        }, factory = {
+        AndroidView(modifier = Modifier
+            .fillMaxSize()
+            .clickable {
+                if (videoView.isPlaying) {
+                    videoView.pause()
+                } else {
+                    videoView.start()
+                }
+            }, factory = {
             videoView.apply {
                 setVideoURI(uri)
                 start()
@@ -100,12 +102,15 @@ fun getVideoViewLifecycleObserver(videoView: VideoView): LifecycleEventObserver 
             Lifecycle.Event.ON_START -> {
             }
             Lifecycle.Event.ON_RESUME -> {
-                videoView.resume()
-                videoView.start()
+                if (!videoView.isPlaying) {
+                    videoView.start()
+                }
                 Log.d("zjw", "resume")
             }
             Lifecycle.Event.ON_PAUSE -> {
-                videoView.pause()
+                if (videoView.canPause()) {
+                    videoView.pause()
+                }
                 Log.d("zjw", "pause")
             }
             Lifecycle.Event.ON_STOP -> {

@@ -44,6 +44,7 @@ object Const {
 
     //compose中使用原生View控件
     const val Video = "Video"
+    const val WebView = "WebView"
 
 }
 

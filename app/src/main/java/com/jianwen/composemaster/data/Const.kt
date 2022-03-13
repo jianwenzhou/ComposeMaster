@@ -46,5 +46,8 @@ object Const {
     const val Video = "Video"
     const val WebView = "WebView"
 
+    //数据流
+    const val CompositionLocal = "CompositionLocal"
+
 }
 

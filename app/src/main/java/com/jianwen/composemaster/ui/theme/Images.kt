@@ -11,6 +11,9 @@ import androidx.compose.runtime.staticCompositionLocalOf
 @Immutable
 data class Images(@DrawableRes val lockupLogo: Int)
 
+/**
+ * internal 限制了跨 module 的方法的使用
+ */
 internal val LocalImages = staticCompositionLocalOf<Images> {
     error("No LocalImages specified")
 }

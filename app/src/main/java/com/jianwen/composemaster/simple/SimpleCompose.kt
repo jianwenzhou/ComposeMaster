@@ -86,7 +86,10 @@ fun SimpleCompose(type: String?) {
         }
         Const.WebView -> {
             val state = rememberWebViewState(url = "https://developer.android.google.cn/")
-            MyWebView(state = state,captureBackPresses = true)
+            MyWebView(state = state, captureBackPresses = true)
+        }
+        Const.CompositionLocal -> {
+            MyCompositionLocal()
         }
 
     }

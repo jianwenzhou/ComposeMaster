@@ -72,15 +72,23 @@ class MainViewModel : ViewModel() {
                     Const.Video,
                     Const.WebView,
                 )
-
+            ),
 
             //数据流
-            ),MainListData(
+            MainListData(
                 "数据流相关", listOf(
                     Const.CompositionLocal,
                 )
             ),
 
-        )
+            //富文本
+            MainListData(
+                "富文本", listOf(
+                    Const.RichText,
+                )
+            ),
+
+
+            )
     }
 }

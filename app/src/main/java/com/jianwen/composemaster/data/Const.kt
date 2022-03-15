@@ -49,5 +49,8 @@ object Const {
     //数据流
     const val CompositionLocal = "CompositionLocal"
 
+    //富文本
+    const val RichText = "RichText"
+
 }
 

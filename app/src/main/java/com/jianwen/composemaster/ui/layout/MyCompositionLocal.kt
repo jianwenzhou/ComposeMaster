@@ -1,20 +1,24 @@
 package com.jianwen.composemaster.ui.layout
 
 import android.widget.Toast
+import androidx.compose.foundation.background
+import androidx.compose.foundation.interaction.FocusInteraction
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.size
 import androidx.compose.material.Button
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.CompositionLocalProvider
-import androidx.compose.runtime.compositionLocalOf
+import androidx.compose.material.TextField
+import androidx.compose.runtime.*
 import androidx.compose.ui.ExperimentalComposeUiApi
-import androidx.compose.ui.platform.LocalClipboardManager
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.platform.LocalLifecycleOwner
-import androidx.compose.ui.platform.LocalSoftwareKeyboardController
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.focus.FocusDirection
+import androidx.compose.ui.platform.*
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.lifecycle.Lifecycle
+import androidx.compose.ui.unit.dp
 
 
 /**
@@ -32,30 +36,53 @@ val textCompositionLocal = compositionLocalOf { "CompositionLocal" }
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable
 fun MyCompositionLocal() {
-    Column {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(MaterialTheme.colors.surface)
+    ) {
         //自定义CompositionLocal
         TextCompositionLocalText()
 
-        //剪切板
-        val clipboardManager = LocalClipboardManager.current
-        Button(onClick = { clipboardManager.setText(AnnotatedString("LocalClipboardManager")) }) {
-            Text(text = "LocalClipboardManager")
-        }
-
-
-        //输入法
-        val keyboard = LocalSoftwareKeyboardController.current
-        Button(onClick = { keyboard?.show() }) {
-            Text(text = "弹出输入法")
-        }
-
-        //生命周期
-        val lifecycle = LocalLifecycleOwner.current.lifecycle
-
+        Spacer(modifier = Modifier.size(20.dp))
 
         //上下文
         val context = LocalContext.current
         Toast.makeText(context, "LocalContext", Toast.LENGTH_SHORT).show()
+
+        Spacer(modifier = Modifier.size(20.dp))
+
+        //剪切板
+        val clipboardManager = LocalClipboardManager.current
+        Button(onClick = {
+            clipboardManager.setText(AnnotatedString("LocalClipboardManager"))
+            Toast.makeText(context, "复制成功:" + clipboardManager.getText(), Toast.LENGTH_SHORT).show()
+        }) {
+            Text(text = "LocalClipboardManager")
+        }
+
+
+        Spacer(modifier = Modifier.size(20.dp))
+
+        //输入法
+        var textField by remember { mutableStateOf("") }
+        TextField(value = textField, onValueChange = { textField = it })
+        val keyboard = LocalSoftwareKeyboardController.current
+        Button(onClick = {
+            keyboard?.show()
+        }) {
+            Text(text = "弹出输入法")
+        }
+        Button(onClick = {
+            keyboard?.hide()
+        }) {
+            Text(text = "隐藏输入法")
+        }
+
+        Spacer(modifier = Modifier.size(20.dp))
+
+        //生命周期
+        val lifecycle = LocalLifecycleOwner.current.lifecycle
 
     }
 }

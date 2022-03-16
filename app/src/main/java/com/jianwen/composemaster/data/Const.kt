@@ -30,6 +30,8 @@ object Const {
     const val ProgressIndicator = "ProgressIndicator"
     const val RadioButton = "RadioButton"
     const val Spacer = "Spacer"
+    const val TabRow = "TabRow"
+    const val Pager = "Pager"
 
     //列表
     const val LazyRow = "LazyRow"

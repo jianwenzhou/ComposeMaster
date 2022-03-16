@@ -1,20 +1,6 @@
 package com.jianwen.composemaster.simple
 
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.SpanStyle
-import androidx.compose.ui.text.buildAnnotatedString
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.withStyle
-import androidx.compose.ui.unit.ExperimentalUnitApi
-import androidx.compose.ui.unit.TextUnit
-import androidx.compose.ui.unit.TextUnitType
-import androidx.compose.ui.unit.sp
 import com.jianwen.composemaster.data.Const
 import com.jianwen.composemaster.ui.layout.*
 
@@ -80,6 +66,15 @@ fun SimpleCompose(type: String?) {
         Const.RadioButton -> {
             MyRadioButton()
         }
+        Const.Spacer -> {
+            MySpacer()
+        }
+        Const.TabRow -> {
+            MyTabRow()
+        }
+        Const.Pager -> {
+            MyPager()
+        }
         Const.LazyRow -> {
             MyLazyRow()
         }
@@ -111,6 +106,11 @@ fun SimpleCompose(type: String?) {
 
     }
 }
+
+
+
+
+
 
 
 

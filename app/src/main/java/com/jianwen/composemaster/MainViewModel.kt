@@ -45,6 +45,8 @@ class MainViewModel : ViewModel() {
                     Const.ProgressIndicator,
                     Const.RadioButton,
                     Const.Spacer,
+                    Const.TabRow,
+                    Const.Pager,
                 )
             ),
             MainListData(

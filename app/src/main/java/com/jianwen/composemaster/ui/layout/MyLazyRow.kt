@@ -1,13 +1,12 @@
 package com.jianwen.composemaster.ui.layout
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
-import androidx.compose.material.LinearProgressIndicator
-import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.livedata.observeAsState
@@ -45,8 +44,13 @@ fun MyLazyRow(model: SimpleViewModel = viewModel()) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         LazyRow {
-            items(observeAsState.value) {
-                MyNetImageCard(it.tags, it.largeImageURL)
+            items(observeAsState.value) { data ->
+                MyNetImageCard(
+                    title = data.tags, url = data.largeImageURL, modifier = Modifier
+                        .width(300.dp)
+                        .height(500.dp)
+                        .padding(16.dp)
+                )
             }
         }
 
@@ -58,17 +62,19 @@ fun MyLazyRow(model: SimpleViewModel = viewModel()) {
 }
 
 @Composable
-fun MyNetImageCard(title: String, url: String, modifier: Modifier = Modifier) {
+fun MyNetImageCard(
+    title: String,
+    url: String,
+    modifier: Modifier = Modifier,
+    onItemClick: () -> Unit = {}
+) {
     Box(
-        modifier = Modifier
-            .width(300.dp)
-            .height(500.dp)
-            .padding(16.dp),
+        modifier = modifier,
     ) {
         NetImageCard(
             title = title,
             url = url,
-            modifier
+            modifier = Modifier.clickable { onItemClick() }
         )
     }
 }

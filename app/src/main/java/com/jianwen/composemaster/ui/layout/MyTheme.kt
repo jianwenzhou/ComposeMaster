@@ -20,23 +20,26 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.jianwen.composemaster.R
 import com.jianwen.composemaster.simple.SimpleViewModel
-import com.jianwen.composemaster.ui.theme.OwlTheme
+import com.jianwen.composemaster.ui.theme.MyComposeTheme
 import kotlinx.coroutines.launch
 
 @Composable
 fun MyTheme(viewModel: SimpleViewModel = viewModel()) {
     val scaffoldState = rememberScaffoldState()
-    Scaffold(
-        scaffoldState = scaffoldState,
-        topBar = { TopBar(scaffoldState) { viewModel.changeTheme() } },
-        bottomBar = { BottomBar() },
-        drawerContent = { DrawerContent() },
-        floatingActionButton = { FloatingButton() },
-        modifier = Modifier.fillMaxSize(),
-        drawerShape = RoundedCornerShape(0),
-    ) {
-        MyContent()
+    MyComposeTheme(colors = viewModel.theme) {
+        Scaffold(
+            scaffoldState = scaffoldState,
+            topBar = { TopBar(scaffoldState) { viewModel.changeTheme() } },
+            bottomBar = { BottomBar() },
+            drawerContent = { DrawerContent() },
+            floatingActionButton = { FloatingButton() },
+            modifier = Modifier.fillMaxSize(),
+            drawerShape = RoundedCornerShape(0),
+        ) {
+            MyContent()
+        }
     }
+
 }
 
 @Composable
@@ -71,7 +74,7 @@ fun MyContent(modifier: Modifier = Modifier) {
                 Text(
                     modifier = Modifier.padding(5.dp),
                     text = stringResource(id = R.string.test_string),
-                    style = TextStyle(color = OwlTheme.colors.onSurface, fontSize = 20.sp)
+                    style = TextStyle(color = MaterialTheme.colors.onSurface, fontSize = 20.sp)
                 )
             }
         }
@@ -81,7 +84,7 @@ fun MyContent(modifier: Modifier = Modifier) {
 @Composable
 fun FloatingButton() {
     FloatingActionButton(onClick = { }) {
-        Text(text = "悬浮", style = TextStyle(color = OwlTheme.colors.onSurface, fontSize = 12.sp))
+        Text(text = "悬浮", style = TextStyle(color = MaterialTheme.colors.onSurface, fontSize = 12.sp))
     }
 }
 
@@ -97,7 +100,7 @@ fun BottomBar() {
         ) {
             Text(
                 text = "我是BottomBar",
-                style = TextStyle(color = OwlTheme.colors.onSurface, fontSize = 20.sp)
+                style = TextStyle(color = MaterialTheme.colors.onSurface, fontSize = 20.sp)
             )
         }
     }
@@ -119,7 +122,7 @@ fun TopBar(scaffoldState: ScaffoldState, onChangeTheme: () -> Unit) {
         title = {
             Text(
                 text = "我是TopBar",
-                style = TextStyle(color = OwlTheme.colors.onSurface, fontSize = 20.sp)
+                style = TextStyle(color = MaterialTheme.colors.onSurface, fontSize = 20.sp)
             )
         },
         backgroundColor = MaterialTheme.colors.primary,

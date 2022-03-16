@@ -1,6 +1,7 @@
 package com.jianwen.composemaster.simple
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.livedata.observeAsState
 import com.jianwen.composemaster.data.Const
 import com.jianwen.composemaster.ui.layout.*
 
@@ -81,6 +82,9 @@ fun SimpleCompose(type: String?) {
         Const.LazyColumn -> {
             MyLazyColumn()
         }
+        Const.LazyVerticalGrid -> {
+            MyLazyVerticalGrid()
+        }
         Const.SwipeToRefreshLayout -> {
             MySwipeToRefreshLayout()
         }
@@ -106,6 +110,7 @@ fun SimpleCompose(type: String?) {
 
     }
 }
+
 
 
 

@@ -1,13 +1,8 @@
 package com.jianwen.composemaster.ui.layout
 
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.LinearProgressIndicator
-import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
@@ -37,7 +32,12 @@ fun MyLazyColumn(model: SimpleViewModel = viewModel()) {
     ) {
         LazyColumn() {
             items(observeAsState.value) { data ->
-                MyNetImageCard(data.tags, data.largeImageURL)
+                MyNetImageCard(
+                    title = data.tags, url = data.largeImageURL, modifier = Modifier
+                        .width(300.dp)
+                        .height(500.dp)
+                        .padding(16.dp)
+                )
             }
         }
 

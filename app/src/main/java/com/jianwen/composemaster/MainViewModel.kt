@@ -53,6 +53,7 @@ class MainViewModel : ViewModel() {
                 "滚动布局", listOf(
                     Const.LazyRow,
                     Const.LazyColumn,
+                    Const.LazyVerticalGrid,
                     Const.SwipeToRefreshLayout,
                 )
             ),

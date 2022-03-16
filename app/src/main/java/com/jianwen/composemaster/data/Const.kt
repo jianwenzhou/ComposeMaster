@@ -36,6 +36,7 @@ object Const {
     //列表
     const val LazyRow = "LazyRow"
     const val LazyColumn = "LazyColumn"
+    const val LazyVerticalGrid = "LazyVerticalGrid"
     const val SwipeToRefreshLayout = "SwipeToRefreshLayout"
 
     //动画

@@ -32,7 +32,8 @@
         <!--原始Layout中使用Compose-->
         <activity
             android:name=".original.OriginalActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
 
     </application>
 

@@ -4,10 +4,12 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.jianwen.composemaster.databinding.ActivityOriginalBinding
 import com.jianwen.composemaster.ui.layout.MyCard
+import com.jianwen.composemaster.ui.layout.MyScaffold
 
-class OriginalActivity : Activity() {
+class OriginalActivity : AppCompatActivity() {
 
     companion object {
         fun start(context: Context) {
@@ -22,9 +24,9 @@ class OriginalActivity : Activity() {
         val binding = ActivityOriginalBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
+        //直接通过setContent函数，使用Compose组件
         binding.composeView.setContent {
-            MyCard()
+            MyScaffold()
         }
 
     }

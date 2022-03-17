@@ -1,8 +1,9 @@
 package com.jianwen.composemaster.simple
 
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.ui.platform.LocalContext
 import com.jianwen.composemaster.data.Const
+import com.jianwen.composemaster.original.OriginalActivity
 import com.jianwen.composemaster.ui.layout.*
 
 /**
@@ -88,6 +89,9 @@ fun SimpleCompose(type: String?) {
         Const.SwipeToRefreshLayout -> {
             MySwipeToRefreshLayout()
         }
+        Const.Dialog -> {
+            MyDialog()
+        }
         Const.Animate -> {
             MyAnimate()
         }
@@ -106,6 +110,9 @@ fun SimpleCompose(type: String?) {
         }
         Const.RichText -> {
             MyRichText()
+        }
+        Const.LayoutCompose -> {
+            OriginalActivity.start(LocalContext.current)
         }
 
     }

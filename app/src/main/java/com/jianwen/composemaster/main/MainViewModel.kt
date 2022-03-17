@@ -1,4 +1,4 @@
-package com.jianwen.composemaster
+package com.jianwen.composemaster.main
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -58,6 +58,11 @@ class MainViewModel : ViewModel() {
                 )
             ),
             MainListData(
+                "弹窗", listOf(
+                    Const.Dialog,
+                )
+            ),
+            MainListData(
                 "动画", listOf(
                     Const.Animate,
                 )
@@ -88,6 +93,13 @@ class MainViewModel : ViewModel() {
             MainListData(
                 "富文本", listOf(
                     Const.RichText,
+                )
+            ),
+
+            //原生Layout布局中使用Compose
+            MainListData(
+                "原生Layout布局中使用Compose", listOf(
+                    Const.LayoutCompose,
                 )
             ),
 

@@ -1,4 +1,4 @@
-package com.jianwen.composemaster.ui.layout
+package com.jianwen.composemaster.main
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background

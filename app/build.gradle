@@ -60,6 +60,7 @@ dependencies {
 
     implementation "androidx.lifecycle:lifecycle-viewmodel-compose:2.4.1"
 
+    //viewPager
     implementation "com.google.accompanist:accompanist-pager:0.21.1-beta"
 
     //constraintLayout
@@ -74,16 +75,20 @@ dependencies {
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 
     //图片加载
-    implementation("io.coil-kt:coil-compose:2.0.0-rc01")
+    implementation "io.coil-kt:coil-compose:2.0.0-rc01"
 
     //下拉刷新
     implementation "com.google.accompanist:accompanist-swiperefresh:0.23.1"
 
     //RX
-    api "io.reactivex.rxjava2:rxjava:$rxjava"
-    api "io.reactivex.rxjava2:rxandroid:$rxandroid"
+    implementation "io.reactivex.rxjava2:rxjava:$rxjava"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxandroid"
     //网络请求 retrofit2
-    api "com.squareup.retrofit2:retrofit:$retrofit"
-    api "com.squareup.retrofit2:converter-gson:$retrofit"
-    api "com.squareup.retrofit2:adapter-rxjava2:$retrofit"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit"
+
+    //appcompat,Layout中使用Compose,报错:ViewTreeLifecycleOwner not found from android.widget.FrameLayout
+    implementation "androidx.appcompat:appcompat:1.4.1"
+
 }

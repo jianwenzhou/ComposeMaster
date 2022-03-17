@@ -39,6 +39,9 @@ object Const {
     const val LazyVerticalGrid = "LazyVerticalGrid"
     const val SwipeToRefreshLayout = "SwipeToRefreshLayout"
 
+    //弹窗
+    const val Dialog = "Dialog"
+
     //动画
     const val Animate = "Animate"
 
@@ -54,6 +57,9 @@ object Const {
 
     //富文本
     const val RichText = "RichText"
+
+    //原生Layout布局中使用Compose
+    const val LayoutCompose = "LayoutCompose"
 
 }
 

@@ -11,22 +11,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ComposeMaster">
+
+        <!--主界面-->
         <activity
-            android:name=".MainActivity"
+            android:name=".main.MainActivity"
             android:exported="true"
-            android:label="@string/app_name"
             android:theme="@style/Theme.ComposeMaster">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
+        <!--compose案例展示-->
         <activity
             android:name=".simple.SimpleActivity"
             android:exported="false"
             android:windowSoftInputMode="stateVisible|adjustPan" />
+
+        <!--原始Layout中使用Compose-->
+        <activity
+            android:name=".original.OriginalActivity"
+            android:exported="false" />
 
     </application>
 

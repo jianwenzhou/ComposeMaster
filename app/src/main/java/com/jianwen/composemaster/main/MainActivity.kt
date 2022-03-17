@@ -1,4 +1,4 @@
-package com.jianwen.composemaster
+package com.jianwen.composemaster.main
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -9,7 +9,6 @@ import androidx.compose.material.Surface
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.unit.dp
 import com.jianwen.composemaster.simple.SimpleActivity
-import com.jianwen.composemaster.ui.layout.MainCompose
 import com.jianwen.composemaster.ui.theme.ZTheme
 
 class MainActivity : ComponentActivity() {

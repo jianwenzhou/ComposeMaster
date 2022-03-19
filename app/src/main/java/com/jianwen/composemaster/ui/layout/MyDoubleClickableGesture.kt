@@ -1,19 +1,16 @@
 package com.jianwen.composemaster.ui.layout
 
-import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.detectTapGestures
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.pointer.pointerInput
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 
@@ -39,9 +36,13 @@ fun MyDoubleClickableGesture() {
 
 @Composable
 fun ClickableSample1() {
-    val current = LocalContext.current
+
+    var log by remember {
+        mutableStateOf("")
+    }
+
     Text(
-        text = "单击，双击，长按，短按",
+        text = "按下,长按,单击,双击",
         textAlign = TextAlign.Center,
         modifier = Modifier
             .size(200.dp)
@@ -49,24 +50,20 @@ fun ClickableSample1() {
             .pointerInput(Unit) {
                 detectTapGestures(
                     onDoubleTap = {
-                        Toast
-                            .makeText(current, "双击", Toast.LENGTH_SHORT)
-                            .show()
+                        log += "双击]   "
                     },
                     onLongPress = {
-                        Toast
-                            .makeText(current, "长按", Toast.LENGTH_SHORT)
-                            .show()
+                        log += "长按]   "
                     },
                     onPress = {
-                        Toast
-                            .makeText(current, "短按", Toast.LENGTH_SHORT)
-                            .show()
+                        log += "   [按下->"
                     },
                     onTap = {
-                        Toast
-                            .makeText(current, "单击", Toast.LENGTH_SHORT)
-                            .show()
+                        log += "单击]   "
                     })
             })
+
+    Spacer(modifier = Modifier.size(50.dp))
+
+    Text(text = log, modifier = Modifier.verticalScroll(rememberScrollState()))
 }

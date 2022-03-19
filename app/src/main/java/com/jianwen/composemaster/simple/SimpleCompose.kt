@@ -122,16 +122,24 @@ fun SimpleCompose(type: String?) {
             MyDoubleClickableGesture()
         }
         Const.ScrollGesture -> {
+            MyScrollGesture()
         }
         Const.DragGesture -> {
+            MyDragGesture()
         }
         Const.SlideGesture -> {
+            MySlideGesture()
         }
         Const.MultipointGesture -> {
+            MyMultipointGesture()
         }
 
     }
 }
+
+
+
+
 
 
 

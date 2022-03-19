@@ -115,8 +115,24 @@ fun SimpleCompose(type: String?) {
             OriginalActivity.start(LocalContext.current)
         }
 
+        Const.ClickableGesture -> {
+            MyClickableGesture()
+        }
+        Const.DoubleClickableGesture -> {
+            MyDoubleClickableGesture()
+        }
+        Const.ScrollGesture -> {
+        }
+        Const.DragGesture -> {
+        }
+        Const.SlideGesture -> {
+        }
+        Const.MultipointGesture -> {
+        }
+
     }
 }
+
 
 
 

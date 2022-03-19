@@ -48,9 +48,6 @@ object Const {
     //主题
     const val Theme = "Theme"
 
-    //compose中使用原生View控件
-    const val Video = "Video"
-    const val WebView = "WebView"
 
     //数据流
     const val CompositionLocal = "CompositionLocal"
@@ -58,8 +55,25 @@ object Const {
     //富文本
     const val RichText = "RichText"
 
+    //compose中使用原生View控件
+    const val Video = "Video"
+    const val WebView = "WebView"
+
     //原生Layout布局中使用Compose
     const val LayoutCompose = "LayoutCompose"
+
+    //点击
+    const val ClickableGesture = "ClickableGesture"
+    //双击，常按，抬起等事件
+    const val DoubleClickableGesture = "DoubleClickableGesture"
+    //滚动
+    const val ScrollGesture = "ScrollGesture"
+    //拖动
+    const val DragGesture = "DragGesture"
+    //滑动
+    const val SlideGesture = "SlideGesture"
+    //多点触控
+    const val MultipointGesture = "MultipointGesture"
 
 }
 

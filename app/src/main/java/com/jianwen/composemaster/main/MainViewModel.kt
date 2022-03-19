@@ -76,30 +76,38 @@ class MainViewModel : ViewModel() {
             ),
 
             MainListData(
-                "Compose中使用View控件", listOf(
-                    Const.Video,
-                    Const.WebView,
-                )
-            ),
-
-            //数据流
-            MainListData(
                 "数据流相关", listOf(
                     Const.CompositionLocal,
                 )
             ),
 
-            //富文本
             MainListData(
                 "富文本", listOf(
                     Const.RichText,
                 )
             ),
 
-            //原生Layout布局中使用Compose
             MainListData(
-                "原生Layout布局中使用Compose", listOf(
+                "XML布局中使用Compose", listOf(
                     Const.LayoutCompose,
+                )
+            ),
+
+            MainListData(
+                "Compose中使用原生View控件", listOf(
+                    Const.Video,
+                    Const.WebView,
+                )
+            ),
+
+            MainListData(
+                "Compose中各种手势", listOf(
+                    Const.ClickableGesture,
+                    Const.DoubleClickableGesture,
+                    Const.ScrollGesture,
+                    Const.DragGesture,
+                    Const.SlideGesture,
+                    Const.MultipointGesture,
                 )
             ),
 

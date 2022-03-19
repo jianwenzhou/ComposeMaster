@@ -41,6 +41,7 @@ object Const {
 
     //弹窗
     const val Dialog = "Dialog"
+    const val Popup = "Popup"
 
     //动画
     const val Animate = "Animate"
@@ -62,6 +63,7 @@ object Const {
     //原生Layout布局中使用Compose
     const val LayoutCompose = "LayoutCompose"
 
+    //手势相关
     //点击
     const val ClickableGesture = "ClickableGesture"
     //双击，常按，抬起等事件

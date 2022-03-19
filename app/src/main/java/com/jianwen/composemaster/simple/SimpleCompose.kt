@@ -2,6 +2,7 @@ package com.jianwen.composemaster.simple
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.window.Popup
 import com.jianwen.composemaster.data.Const
 import com.jianwen.composemaster.original.OriginalActivity
 import com.jianwen.composemaster.ui.layout.*
@@ -92,6 +93,9 @@ fun SimpleCompose(type: String?) {
         Const.Dialog -> {
             MyDialog()
         }
+        Const.Popup -> {
+            MyPopup()
+        }
         Const.Animate -> {
             MyAnimate()
         }
@@ -102,8 +106,7 @@ fun SimpleCompose(type: String?) {
             MyVideo()
         }
         Const.WebView -> {
-            val state = rememberWebViewState(url = "https://developer.android.google.cn/")
-            MyWebView(state = state, captureBackPresses = true)
+            MyWebView()
         }
         Const.CompositionLocal -> {
             MyCompositionLocal()

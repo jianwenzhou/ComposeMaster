@@ -11,6 +11,21 @@ import com.jianwen.composemaster.ui.layout.LoadingState.Finished
 import com.jianwen.composemaster.ui.layout.LoadingState.Loading
 
 /**
+ * @ProjectName ComposeMaster
+ * @PackageName com.jianwen.composemaster.ui.layout
+ * @Author jianwen.zhou
+ * @Date 2022/3/19 22:43
+ * @Des  compose中使用Android原生组件,下面的代码摘自网上.核心代码是通过AndroidView函数,在Compose中装在原生View控件.
+ */
+
+@Composable
+fun MyWebView() {
+    val state = rememberWebViewState(url = "https://developer.android.google.cn/")
+    ComposeWebView(state = state, captureBackPresses = true)
+}
+
+
+/**
  * A wrapper around the Android View WebView to provide a basic WebView composable.
  *
  * If you require more customisation you are most likely better rolling your own and using this
@@ -27,7 +42,7 @@ import com.jianwen.composemaster.ui.layout.LoadingState.Loading
  * @sample com.google.accompanist.sample.webview.BasicWebViewSample
  */
 @Composable
-fun MyWebView(
+fun ComposeWebView(
     state: WebViewState,
     modifier: Modifier = Modifier,
     captureBackPresses: Boolean = true,

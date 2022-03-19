@@ -60,6 +60,7 @@ class MainViewModel : ViewModel() {
             MainListData(
                 "弹窗", listOf(
                     Const.Dialog,
+                    Const.Popup,
                 )
             ),
             MainListData(

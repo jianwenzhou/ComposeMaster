@@ -1,14 +1,15 @@
 package com.jianwen.composemaster.original
 
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.jianwen.composemaster.databinding.ActivityOriginalBinding
-import com.jianwen.composemaster.ui.layout.MyCard
 import com.jianwen.composemaster.ui.layout.MyScaffold
 
+/**
+ * 这块代码演示,在layout布局中,使用Compose组件功能.通过androidx.compose.ui.platform.ComposeView控件.
+ */
 class OriginalActivity : AppCompatActivity() {
 
     companion object {

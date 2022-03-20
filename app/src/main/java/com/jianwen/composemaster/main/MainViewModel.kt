@@ -112,6 +112,11 @@ class MainViewModel : ViewModel() {
                 )
             ),
 
+            MainListData(
+                "Compose中Navigation的使用", listOf(
+                    Const.ComposeNavigation,
+                )
+            ),
 
             )
     }

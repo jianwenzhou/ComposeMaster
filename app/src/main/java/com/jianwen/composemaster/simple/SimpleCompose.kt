@@ -2,7 +2,6 @@ package com.jianwen.composemaster.simple
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.window.Popup
 import com.jianwen.composemaster.data.Const
 import com.jianwen.composemaster.original.OriginalActivity
 import com.jianwen.composemaster.ui.layout.*
@@ -135,6 +134,9 @@ fun SimpleCompose(type: String?) {
         }
         Const.MultipointGesture -> {
             MyMultipointGesture()
+        }
+        Const.ComposeNavigation -> {
+            MyNavHost()
         }
 
     }

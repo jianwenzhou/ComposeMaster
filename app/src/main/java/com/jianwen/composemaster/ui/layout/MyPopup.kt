@@ -30,17 +30,12 @@ fun MyPopup() {
 
         if (showPop) {
             Popup(
-                alignment = Alignment.TopStart,
+                alignment = Alignment.BottomCenter,
                 offset = IntOffset(0, 0),
                 onDismissRequest = { },
                 properties = PopupProperties(),
             ) {
-                Text(
-                    text = "我是Popup",
-                    Modifier
-                        .padding(20.dp)
-                        .background(MaterialTheme.colors.secondary)
-                )
+                MyCard()
             }
         }
 

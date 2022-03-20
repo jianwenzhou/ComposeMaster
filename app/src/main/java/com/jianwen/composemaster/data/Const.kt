@@ -64,18 +64,13 @@ object Const {
     const val LayoutCompose = "LayoutCompose"
 
     //手势相关
-    //点击
-    const val ClickableGesture = "ClickableGesture"
-    //双击，常按，抬起等事件
-    const val DoubleClickableGesture = "DoubleClickableGesture"
-    //滚动
-    const val ScrollGesture = "ScrollGesture"
-    //拖动
-    const val DragGesture = "DragGesture"
-    //滑动
-    const val SlideGesture = "SlideGesture"
-    //多点触控
-    const val MultipointGesture = "MultipointGesture"
+    const val ClickableGesture = "ClickableGesture" //点击
+    const val DoubleClickableGesture = "DoubleClickableGesture" //双击，常按，抬起等事件
+    const val ScrollGesture = "ScrollGesture" //滚动
+    const val DragGesture = "DragGesture" //拖动
+    const val SlideGesture = "SlideGesture" //滑动
+    const val MultipointGesture = "MultipointGesture" //多点触控
 
+    const val ComposeNavigation = "ComposeNavigation" //Navigation
 }
 

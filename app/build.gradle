@@ -91,4 +91,6 @@ dependencies {
     //appcompat,Layout中使用Compose,报错:ViewTreeLifecycleOwner not found from android.widget.FrameLayout
     implementation "androidx.appcompat:appcompat:1.4.1"
 
+    //compose中使用navigation
+    implementation "androidx.navigation:navigation-compose:2.4.0-beta02"
 }

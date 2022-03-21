@@ -71,6 +71,7 @@ object Const {
     const val SlideGesture = "SlideGesture" //滑动
     const val MultipointGesture = "MultipointGesture" //多点触控
 
-    const val ComposeNavigation = "ComposeNavigation" //Navigation
+    //Navigation
+    const val ComposeNavigation = "ComposeNavigation"
 }
 

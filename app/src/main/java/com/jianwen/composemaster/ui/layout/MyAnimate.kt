@@ -45,7 +45,7 @@ fun MyAnimate() {
 @Composable
 fun VisibleAnim1() {
     var isVis by remember { mutableStateOf(true) }
-
+    Text(text = "默认AnimatedVisibility")
     Column(
         modifier = Modifier
             .fillMaxWidth(),
@@ -69,7 +69,7 @@ fun VisibleAnim1() {
 @Composable
 fun VisibleAnim2() {
     var isVis by remember { mutableStateOf(true) }
-
+    Text(text = "定制AnimatedVisibility")
     Column(
         modifier = Modifier
             .fillMaxWidth(),
@@ -97,7 +97,7 @@ fun VisibleAnim2() {
 @Composable
 fun VisibleAnim3() {
     var isChange by remember { mutableStateOf(true) }
-
+    Text(text = "animateColorAsState 颜色变化")
     Column(
         modifier = Modifier
             .fillMaxWidth(),
@@ -120,7 +120,7 @@ fun VisibleAnim3() {
 @Composable
 fun VisibleAnim4() {
     var isOpen by remember { mutableStateOf(false) }
-
+    Text(text = "animateContentSize 动画切换大小")
     Column(
         modifier = Modifier
             .fillMaxWidth(),
@@ -158,6 +158,7 @@ fun VisibleAnim5() {
         )
     )
 
+    Text(text = "rememberInfiniteTransition 循环动画")
     Column(
         modifier = Modifier
             .fillMaxWidth(),

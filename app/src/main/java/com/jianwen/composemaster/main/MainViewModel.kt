@@ -77,7 +77,7 @@ class MainViewModel : ViewModel() {
             ),
 
             MainListData(
-                "数据流相关", listOf(
+                "隐式传参", listOf(
                     Const.CompositionLocal,
                 )
             ),

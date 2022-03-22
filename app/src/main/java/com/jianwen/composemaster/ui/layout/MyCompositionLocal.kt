@@ -1,8 +1,8 @@
 package com.jianwen.composemaster.ui.layout
 
+import android.content.Context
 import android.widget.Toast
 import androidx.compose.foundation.background
-import androidx.compose.foundation.interaction.FocusInteraction
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -14,8 +14,12 @@ import androidx.compose.material.TextField
 import androidx.compose.runtime.*
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.focus.FocusDirection
-import androidx.compose.ui.platform.*
+import androidx.compose.ui.focus.FocusRequester
+import androidx.compose.ui.focus.focusRequester
+import androidx.compose.ui.platform.LocalClipboardManager
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalLifecycleOwner
+import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -33,7 +37,6 @@ import androidx.compose.ui.unit.dp
  */
 val textCompositionLocal = compositionLocalOf { "CompositionLocal" }
 
-@OptIn(ExperimentalComposeUiApi::class)
 @Composable
 fun MyCompositionLocal() {
     Column(
@@ -43,48 +46,66 @@ fun MyCompositionLocal() {
     ) {
         //自定义CompositionLocal
         TextCompositionLocalText()
-
         Spacer(modifier = Modifier.size(20.dp))
 
         //上下文
-        val context = LocalContext.current
-        Toast.makeText(context, "LocalContext", Toast.LENGTH_SHORT).show()
-
+        val context = MyLocalContext()
         Spacer(modifier = Modifier.size(20.dp))
 
         //剪切板
-        val clipboardManager = LocalClipboardManager.current
-        Button(onClick = {
-            clipboardManager.setText(AnnotatedString("LocalClipboardManager"))
-            Toast.makeText(context, "复制成功:" + clipboardManager.getText(), Toast.LENGTH_SHORT).show()
-        }) {
-            Text(text = "LocalClipboardManager")
-        }
-
-
+        MyLocalClipboardManager(context)
         Spacer(modifier = Modifier.size(20.dp))
 
         //输入法
-        var textField by remember { mutableStateOf("") }
-        TextField(value = textField, onValueChange = { textField = it })
-        val keyboard = LocalSoftwareKeyboardController.current
-        Button(onClick = {
-            keyboard?.show()
-        }) {
-            Text(text = "弹出输入法")
-        }
-        Button(onClick = {
-            keyboard?.hide()
-        }) {
-            Text(text = "隐藏输入法")
-        }
-
+        MyLocalSoftwareKeyboardController()
         Spacer(modifier = Modifier.size(20.dp))
 
-        //生命周期
+        //生命周期,演示可见MyVideo.kt
         val lifecycle = LocalLifecycleOwner.current.lifecycle
 
     }
+}
+
+@OptIn(ExperimentalComposeUiApi::class)
+@Composable
+private fun MyLocalSoftwareKeyboardController() {
+    val focusRequester = remember { FocusRequester() }
+    var textField by remember { mutableStateOf("") }
+    TextField(
+        value = textField,
+        onValueChange = { textField = it },
+        modifier = Modifier.focusRequester(focusRequester)
+    )
+    val keyboard = LocalSoftwareKeyboardController.current
+    Button(onClick = {
+        focusRequester.requestFocus()
+        keyboard?.show()
+    }) {
+        Text(text = "弹出输入法")
+    }
+    Button(onClick = {
+        keyboard?.hide()
+    }) {
+        Text(text = "隐藏输入法")
+    }
+}
+
+@Composable
+private fun MyLocalClipboardManager(context: Context) {
+    val clipboardManager = LocalClipboardManager.current
+    Button(onClick = {
+        clipboardManager.setText(AnnotatedString("LocalClipboardManager"))
+        Toast.makeText(context, "复制成功:" + clipboardManager.getText(), Toast.LENGTH_SHORT).show()
+    }) {
+        Text(text = "LocalClipboardManager")
+    }
+}
+
+@Composable
+private fun MyLocalContext(): Context {
+    val context = LocalContext.current
+    Toast.makeText(context, "LocalContext", Toast.LENGTH_SHORT).show()
+    return context
 }
 
 @Composable

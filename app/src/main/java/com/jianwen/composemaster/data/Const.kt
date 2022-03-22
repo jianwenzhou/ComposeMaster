@@ -72,5 +72,12 @@ object Const {
     const val MultipointGesture = "MultipointGesture" //多点触控
 
     const val ComposeNavigation = "ComposeNavigation" //Navigation
+
+    //附带效应
+    const val LaunchedEffect = "LaunchedEffect"
+    const val RememberCoroutineScope = "RememberCoroutineScope"
+
+
+
 }
 

@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.jianwen.composemaster.R
 import com.jianwen.composemaster.databinding.ActivityOriginalBinding
 import com.jianwen.composemaster.ui.layout.MyScaffold
 

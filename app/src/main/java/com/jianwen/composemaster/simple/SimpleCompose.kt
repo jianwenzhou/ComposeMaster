@@ -138,9 +138,17 @@ fun SimpleCompose(type: String?) {
         Const.ComposeNavigation -> {
             MyNavHost()
         }
+        Const.LaunchedEffect -> {
+            MyLaunchedEffect()
+        }
+        Const.RememberCoroutineScope -> {
+            MyRememberCoroutineScope()
+        }
 
     }
 }
+
+
 
 
 

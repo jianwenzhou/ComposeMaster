@@ -118,6 +118,13 @@ class MainViewModel : ViewModel() {
                 )
             ),
 
+            MainListData(
+                "Compose的附带效应", listOf(
+                    Const.LaunchedEffect,
+                    Const.RememberCoroutineScope,
+                )
+            ),
+
             )
     }
 }

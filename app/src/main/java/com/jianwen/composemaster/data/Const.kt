@@ -76,6 +76,7 @@ object Const {
     //附带效应
     const val LaunchedEffect = "LaunchedEffect"
     const val RememberCoroutineScope = "RememberCoroutineScope"
+    const val RememberUpdateState = "RememberUpdateState"
 
 
 

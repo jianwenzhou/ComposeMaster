@@ -123,6 +123,7 @@ class MainViewModel : ViewModel() {
                     Const.LaunchedEffect,
                     Const.RememberCoroutineScope,
                     Const.RememberUpdateState,
+                    Const.DisposableEffect,
                 )
             ),
 

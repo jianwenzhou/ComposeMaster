@@ -1,13 +1,10 @@
 package com.jianwen.composemaster.simple
 
-import android.util.Log
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.platform.LocalContext
 import com.jianwen.composemaster.data.Const
 import com.jianwen.composemaster.original.OriginalActivity
 import com.jianwen.composemaster.ui.layout.*
-import kotlinx.coroutines.delay
 
 /**
  * @ProjectName ComposeMaster
@@ -150,10 +147,12 @@ fun SimpleCompose(type: String?) {
         Const.RememberUpdateState -> {
             MyRememberUpdateState()
         }
+        Const.DisposableEffect -> {
+            MyDisposableEffect()
+        }
 
     }
 }
-
 
 
 

@@ -77,6 +77,7 @@ object Const {
     const val LaunchedEffect = "LaunchedEffect"
     const val RememberCoroutineScope = "RememberCoroutineScope"
     const val RememberUpdateState = "RememberUpdateState"
+    const val DisposableEffect = "DisposableEffect"
 
 
 

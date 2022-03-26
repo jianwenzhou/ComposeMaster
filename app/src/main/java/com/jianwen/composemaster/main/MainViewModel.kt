@@ -124,6 +124,8 @@ class MainViewModel : ViewModel() {
                     Const.RememberCoroutineScope,
                     Const.RememberUpdateState,
                     Const.DisposableEffect,
+                    Const.SideEffect,
+                    Const.ProduceState,
                 )
             ),
 

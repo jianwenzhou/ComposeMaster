@@ -78,6 +78,8 @@ object Const {
     const val RememberCoroutineScope = "RememberCoroutineScope"
     const val RememberUpdateState = "RememberUpdateState"
     const val DisposableEffect = "DisposableEffect"
+    const val SideEffect = "SideEffect"
+    const val ProduceState = "ProduceState"
 
 
 

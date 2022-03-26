@@ -1,5 +1,6 @@
 package com.jianwen.composemaster.simple
 
+import androidx.activity.OnBackPressedDispatcher
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 import com.jianwen.composemaster.data.Const
@@ -148,7 +149,13 @@ fun SimpleCompose(type: String?) {
             MyRememberUpdateState()
         }
         Const.DisposableEffect -> {
-            MyDisposableEffect()
+            MyDisposableEffect(OnBackPressedDispatcher())
+        }
+        Const.SideEffect -> {
+            MySideEffect()
+        }
+        Const.ProduceState -> {
+            MyProduceState()
         }
 
     }

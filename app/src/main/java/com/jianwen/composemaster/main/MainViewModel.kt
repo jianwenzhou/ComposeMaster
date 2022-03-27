@@ -126,6 +126,7 @@ class MainViewModel : ViewModel() {
                     Const.DisposableEffect,
                     Const.SideEffect,
                     Const.ProduceState,
+                    Const.DerivedState,
                 )
             ),
 

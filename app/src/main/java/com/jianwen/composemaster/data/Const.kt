@@ -80,6 +80,7 @@ object Const {
     const val DisposableEffect = "DisposableEffect"
     const val SideEffect = "SideEffect"
     const val ProduceState = "ProduceState"
+    const val DerivedState = "DerivedState"
 
 
 

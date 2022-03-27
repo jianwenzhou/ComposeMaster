@@ -157,6 +157,9 @@ fun SimpleCompose(type: String?) {
         Const.ProduceState -> {
             MyProduceState()
         }
+        Const.DerivedState -> {
+            MyDerivedState()
+        }
 
     }
 }

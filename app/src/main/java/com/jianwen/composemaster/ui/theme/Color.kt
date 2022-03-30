@@ -17,7 +17,7 @@ val jPrimaryLight = Color(0xffff6090)
 val jPrimaryDark = Color(0xffb0003a)
 val jSecondary = Color(0xffef5350)
 val jSecondaryLight = Color(0xffff867c)
-val jSecondaryDark = Color(0xb61827)
+val jSecondaryDark = Color(0xffb61827)
 
 /**
  * Return the fully opaque color that results from compositing [onSurface] atop [surface] with the

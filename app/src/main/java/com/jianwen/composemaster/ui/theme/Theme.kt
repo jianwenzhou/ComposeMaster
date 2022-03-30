@@ -1,10 +1,12 @@
 package com.jianwen.composemaster.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.material.*
+import androidx.compose.material.Colors
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.darkColors
+import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.jianwen.composemaster.R
 
@@ -71,6 +73,10 @@ private val LightImages = Images(lockupLogo = R.drawable.ic_drak)
 
 private val DarkImages = Images(lockupLogo = R.drawable.ic_light)
 
+private val LightColors = MyColors(jSecondaryLight,jSecondaryLight,jSecondaryLight)
+
+private val DarkColors = MyColors(jSecondaryDark,jSecondaryDark,jSecondaryDark)
+
 @Composable
 fun MyComposeTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
@@ -79,10 +85,12 @@ fun MyComposeTheme(
 ) {
     val elevation = if (darkTheme) DarkElevation else LightElevation
     val images = if (darkTheme) DarkImages else LightImages
+    val color = if (darkTheme) DarkColors else LightColors
     //compose中非常重要的隐式传参,在MaterialTheme包裹下,都可以通过LocalImages.current.lockupLogo获取到值!!!
     CompositionLocalProvider(
         LocalElevations provides elevation,
-        LocalImages provides images
+        LocalImages provides images ,
+        LocalColor provides color
     ) {
         MaterialTheme(
             colors = colors,

@@ -3,12 +3,16 @@ package com.jianwen.composemaster.simple
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import android.view.View
+import android.view.ViewGroup
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.ui.unit.dp
+import androidx.core.view.children
 import com.jianwen.composemaster.data.Const
 import com.jianwen.composemaster.ui.theme.JTheme
 
@@ -49,5 +53,19 @@ class SimpleActivity : ComponentActivity() {
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        window.decorView.postDelayed({
+            (window.decorView as? ViewGroup)?.let { transverse(it, 1) }
+        }, 2000)
+    }
+
+    //打印当前窗口层级
+    private fun transverse(view: View, index: Int) {
+        Log.e("zjw", "第${index}层：" + view)
+        if (view is ViewGroup) {
+            view.children.forEach { transverse(it, index + 1) }
+        }
+    }
 
 }

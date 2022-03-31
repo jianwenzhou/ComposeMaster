@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "ComposeMaster"
-include ':app'
-include ':demo'
+include ':compose_basics'
+include ':compose_demo'
 include ':api'

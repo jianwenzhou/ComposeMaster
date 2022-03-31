@@ -5,11 +5,11 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.jianwen.composemaster.net.api.const.NetConst
-import com.jianwen.composemaster.net.api.entity.Hit
-import com.jianwen.composemaster.net.api.entity.ImageEntity
-import com.jianwen.composemaster.net.api.manager.ApiFactory
-import com.jianwen.composemaster.net.api.manager.CallBackWrapper
+import com.hstong.api.http.const.NetConst
+import com.hstong.api.http.entity.Hit
+import com.hstong.api.http.entity.ImageEntity
+import com.hstong.api.http.manager.ApiFactory
+import com.hstong.api.http.manager.CallBackWrapper
 import com.jianwen.composemaster.ui.theme.jThemeDark
 import com.jianwen.composemaster.ui.theme.jThemeLight
 import com.jianwen.composemaster.ui.theme.zThemeDark

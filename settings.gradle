@@ -14,3 +14,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "ComposeMaster"
 include ':app'
+include ':demo'
+include ':api'

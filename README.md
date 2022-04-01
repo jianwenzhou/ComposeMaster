@@ -1,4 +1,5 @@
-# ComposeMaster 
+# Jetpack Compose 知识体系
+
 ## 各个库介绍
 #### api库:网络请求相关
 #### compose_basics库:Compose基础学习
@@ -30,8 +31,6 @@
 
 <img src="screenshots/附带效应.jpg"/>
 
-
-# Jetpack Compose
 
 ## 基础知识
 

@@ -7,20 +7,20 @@
 
 ## Screenshots
 
-<img src="screenshots/列表1.jpg"/>
 #### compose_basics列表1
+<img src="screenshots/列表1.jpg"/>
 
-<img src="screenshots/列表2.jpg"/>
 #### compose_basics列表2
+<img src="screenshots/列表2.jpg"/>
 
-<img src="screenshots/动画.jpg"/>
 #### compose_basics动画
+<img src="screenshots/动画.jpg"/>
 
-<img src="screenshots/滚动设置.jpg"/>
 #### compose_basics滚动
+<img src="screenshots/滚动设置.jpg"/>
 
-<img src="screenshots/附带效应.jpg"/>
 #### compose_basics附带效应
+<img src="screenshots/附带效应.jpg"/>
 
 
 ## 基础知识

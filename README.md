@@ -1,17 +1,27 @@
 # ComposeMaster
-## api库:网络请求相关
-## compose_basics库:Compose基础学习
-## compose_demo库:依据Compose的学习,写一个相对完整的demo项目
+#### api库:网络请求相关
+#### compose_basics库:Compose基础学习
+#### compose_demo库:依据Compose的学习,写一个相对完整的demo项目
 
 # Jetpack Compose
 
 ## Screenshots
 
 <img src="screenshots/列表1.jpg"/>
+#### compose_basics列表1
+
 <img src="screenshots/列表2.jpg"/>
+#### compose_basics列表2
+
 <img src="screenshots/动画.jpg"/>
+#### compose_basics动画
+
 <img src="screenshots/滚动设置.jpg"/>
+#### compose_basics滚动
+
 <img src="screenshots/附带效应.jpg"/>
+#### compose_basics附带效应
+
 
 ## 基础知识
 

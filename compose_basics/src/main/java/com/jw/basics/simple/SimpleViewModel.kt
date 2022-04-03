@@ -38,7 +38,7 @@ class SimpleViewModel : ViewModel() {
     val q = "风景"
 
     /**
-     * 下拉刷新或者首次刷新 为true
+     * 获取图片集合
      */
     fun getImageList(
         page: Int = 1,

@@ -1,4 +1,4 @@
-package com.hstong.demo.ui.compose
+package com.jw.demo.ui.compose
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.fillMaxSize
@@ -19,11 +19,11 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.hstong.demo.model.MainViewModel
+import com.jw.demo.model.MainViewModel
 
 /**
  * @ProjectName ComposeMaster
- * @PackageName com.hstong.demo
+ * @PackageName com.jw.demo
  * @Author jianwen.zhou
  * @Date 2022/4/1 23:03
  * @Des

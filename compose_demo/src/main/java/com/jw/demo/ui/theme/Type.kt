@@ -1,4 +1,4 @@
-package com.hstong.demo.ui.theme
+package com.jw.demo.ui.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle

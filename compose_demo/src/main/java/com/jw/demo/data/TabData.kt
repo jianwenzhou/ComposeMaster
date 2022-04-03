@@ -1,8 +1,8 @@
-package com.hstong.demo.data
+package com.jw.demo.data
 
 /**
  * @ProjectName ComposeMaster
- * @PackageName com.hstong.demo.data
+ * @PackageName com.jw.demo.data
  * @Author jianwen.zhou
  * @Date 2022/4/1 23:13
  * @Des

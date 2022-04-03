@@ -1,4 +1,4 @@
-package com.hstong.demo.ui.theme
+package com.jw.demo.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme

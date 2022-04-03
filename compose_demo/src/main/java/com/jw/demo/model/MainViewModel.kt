@@ -1,4 +1,4 @@
-package com.hstong.demo.model
+package com.jw.demo.model
 
 import androidx.annotation.StringRes
 import androidx.lifecycle.MutableLiveData
@@ -8,14 +8,14 @@ import com.jw.http.entity.Hit
 import com.jw.http.entity.ImageEntity
 import com.jw.http.manager.ApiFactory
 import com.jw.http.manager.CallBackWrapper
-import com.hstong.demo.R
-import com.hstong.demo.data.TabData
+import com.jw.demo.R
+import com.jw.demo.data.TabData
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
 /**
  * @ProjectName ComposeMaster
- * @PackageName com.jw.basics.simple
+ * @PackageName com.jw.demo.simple
  * @Author jianwen.zhou
  * @Date 2022/3/10 23:25
  * @Des

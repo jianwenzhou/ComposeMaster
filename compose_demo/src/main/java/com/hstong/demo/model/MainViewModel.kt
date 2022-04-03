@@ -3,11 +3,11 @@ package com.hstong.demo.model
 import androidx.annotation.StringRes
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.hstong.api.http.const.NetConst
-import com.hstong.api.http.entity.Hit
-import com.hstong.api.http.entity.ImageEntity
-import com.hstong.api.http.manager.ApiFactory
-import com.hstong.api.http.manager.CallBackWrapper
+import com.jw.http.const.NetConst
+import com.jw.http.entity.Hit
+import com.jw.http.entity.ImageEntity
+import com.jw.http.manager.ApiFactory
+import com.jw.http.manager.CallBackWrapper
 import com.hstong.demo.R
 import com.hstong.demo.data.TabData
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -15,7 +15,7 @@ import io.reactivex.schedulers.Schedulers
 
 /**
  * @ProjectName ComposeMaster
- * @PackageName com.jianwen.composemaster.simple
+ * @PackageName com.jw.basics.simple
  * @Author jianwen.zhou
  * @Date 2022/3/10 23:25
  * @Des

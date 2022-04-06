@@ -72,4 +72,7 @@ dependencies {
     implementation "com.google.accompanist:accompanist-pager:0.21.1-beta"
     //constraintLayout
     implementation 'androidx.constraintlayout:constraintlayout-compose:1.0.0'
+
+    implementation "androidx.compose.foundation:foundation:1.2.0-alpha06"
+    implementation "androidx.compose.foundation:foundation-layout:1.2.0-alpha06"
 }

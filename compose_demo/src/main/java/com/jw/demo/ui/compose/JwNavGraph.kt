@@ -1,11 +1,16 @@
 package com.jw.demo.ui.compose
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
-import com.jw.demo.data.TabData
+import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navigation
+import com.jw.demo.ui.nav.MainActions
+import com.jw.demo.ui.nav.MainDestinations
+import com.jw.demo.ui.nav.TabData
+import com.jw.demo.ui.nav.courses
 
 /**
  * @ProjectName ComposeMaster
@@ -16,24 +21,29 @@ import com.jw.demo.data.TabData
  */
 @Composable
 fun JwNavGraph(
-    navController: NavHostController,
-    modifier: Modifier,
-    startDestination: String = TabData.Hot.route,
+    modifier: Modifier = Modifier,
+    finishActivity: () -> Unit = {},
+    navController: NavHostController = rememberNavController(),
+    startDestination: String = MainDestinations.MAIN_ROUTE,
 ) {
+
+    val actions = remember(navController) { MainActions(navController) }
+
     NavHost(
         navController = navController,
         startDestination = startDestination
     ) {
 
-        composable(TabData.Hot.route) {
-            HotPage(navController)
-        }
-        composable(TabData.Find.route) {
-            FindPage(navController)
-        }
-        composable(TabData.Me.route) {
-            MePage(navController)
+        navigation(
+            route = MainDestinations.MAIN_ROUTE,
+            startDestination = TabData.Hot.route
+        ) {
+            courses(
+                navController = navController,
+                modifier = modifier
+            )
         }
 
     }
 }
+

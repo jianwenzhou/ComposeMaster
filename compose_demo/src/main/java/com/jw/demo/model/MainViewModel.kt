@@ -1,10 +1,7 @@
 package com.jw.demo.model
 
-import androidx.annotation.DrawableRes
-import androidx.annotation.StringRes
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.jw.demo.R
 import com.jw.http.const.NetConst
 import com.jw.http.entity.Hit
 import com.jw.http.entity.ImageEntity
@@ -18,7 +15,7 @@ import io.reactivex.schedulers.Schedulers
  * @PackageName com.jw.demo.simple
  * @Author jianwen.zhou
  * @Date 2022/3/10 23:25
- * @Des
+ * @Des 首页ViewModel
  */
 class MainViewModel : ViewModel() {
 

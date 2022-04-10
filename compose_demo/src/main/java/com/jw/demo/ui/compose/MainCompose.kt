@@ -12,7 +12,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.jw.demo.data.TabData
+import com.jw.demo.ui.nav.TabData
 import java.util.*
 
 /**
@@ -24,7 +24,7 @@ import java.util.*
  */
 
 @Composable
-fun MainCompose() {
+fun MainCompose(finishActivity: () -> Unit) {
 
     val tabs = remember { TabData.values() }
     val navController = rememberNavController()
@@ -34,8 +34,9 @@ fun MainCompose() {
         backgroundColor = MaterialTheme.colors.primarySurface,
     ) { innerPaddingModifier ->
         JwNavGraph(
-            navController = navController,
-            modifier = Modifier.padding(innerPaddingModifier)
+            modifier = Modifier.padding(innerPaddingModifier),
+            finishActivity = finishActivity,
+            navController = navController
         )
     }
 }
@@ -43,17 +44,20 @@ fun MainCompose() {
 
 @Composable
 fun MainBottomBar(
-    navController: NavHostController = rememberNavController(), tabs: Array<TabData>
+    navController: NavHostController = rememberNavController(),
+    tabs: Array<TabData>
 ) {
+    //当前返回栈
     val navBackStackEntry by navController.currentBackStackEntryAsState()
+    //当前路由名称
     val currentRoute = navBackStackEntry?.destination?.route ?: TabData.Hot.route
-
-    val routes = remember { TabData.values().map { it.route } }
-
+    //路由集合
+    val routes = remember { tabs.map { it.route } }
+    //判断当前路由是否属于路由集合
     if (currentRoute in routes) {
-
+        //底部导航组件
         BottomNavigation(
-            Modifier.windowInsetsBottomHeight(
+            modifier = Modifier.windowInsetsBottomHeight(
                 WindowInsets.navigationBars.add(
                     WindowInsets(
                         bottom = 56.dp
@@ -61,6 +65,7 @@ fun MainBottomBar(
                 )
             )
         ) {
+            //便利tabs创建导航item
             tabs.forEach { tab ->
                 BottomNavigationItem(
                     icon = {
@@ -73,6 +78,7 @@ fun MainBottomBar(
                     label = { Text(stringResource(tab.title).uppercase(Locale.getDefault())) },
                     selected = currentRoute == tab.route,
                     onClick = {
+                        //当点击的tab非选中状态，就通过navController打开界面。
                         if (tab.route != currentRoute) {
                             navController.navigate(tab.route) {
                                 popUpTo(navController.graph.startDestinationId) {

@@ -12,25 +12,21 @@ import androidx.navigation.NavHostController
  * @Des APP的跳转管理
  */
 object MainDestinations {
+    const val SPLASH_ROUTER = "jw/splash"
     const val MAIN_ROUTE = "jw/main"
-    const val COURSE_DETAIL_ROUTE = "course"
 }
 
 class MainActions(navController: NavHostController) {
+
+    //打开首页
+    val openMain = { from: NavBackStackEntry ->
+        if (from.lifecycleIsResumed()) {
+            navController.navigate(MainDestinations.MAIN_ROUTE)
+        }
+    }
+
     val onboardingComplete: () -> Unit = {
         navController.popBackStack()
-    }
-
-    val openCourse = { newCourseId: Long, from: NavBackStackEntry ->
-        if (from.lifecycleIsResumed()) {
-            navController.navigate("${MainDestinations.COURSE_DETAIL_ROUTE}/$newCourseId")
-        }
-    }
-
-    val relatedCourse = { newCourseId: Long, from: NavBackStackEntry ->
-        if (from.lifecycleIsResumed()) {
-            navController.navigate("${MainDestinations.COURSE_DETAIL_ROUTE}/$newCourseId")
-        }
     }
 
     val upPress: (from: NavBackStackEntry) -> Unit = { from ->

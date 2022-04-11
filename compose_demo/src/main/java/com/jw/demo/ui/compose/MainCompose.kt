@@ -65,7 +65,7 @@ fun MainBottomBar(
                 )
             )
         ) {
-            //便利tabs创建导航item
+            //遍历tabs创建导航item
             tabs.forEach { tab ->
                 BottomNavigationItem(
                     icon = {

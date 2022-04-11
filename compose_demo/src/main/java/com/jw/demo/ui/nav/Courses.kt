@@ -2,6 +2,8 @@ package com.jw.demo.ui.nav
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.MutableState
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
@@ -16,10 +18,19 @@ import com.jw.demo.ui.compose.MePage
  */
 fun NavGraphBuilder.courses(
     navController: NavHostController,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    onboardingComplete: MutableState<Boolean>
 ) {
     composable(TabData.Hot.route) {
-        HotPage(navController, modifier)
+        //LaunchedEffect，只在可组合函数首次执行，或者key发生变化时候。
+        LaunchedEffect(key1 = onboardingComplete, block = {
+            if (!onboardingComplete.value) {
+                navController.navigate(MainDestinations.SPLASH_ROUTER)
+            }
+        })
+        if (onboardingComplete.value) {
+            HotPage(navController, modifier)
+        }
     }
     composable(TabData.Find.route) {
         FindPage(navController, modifier)

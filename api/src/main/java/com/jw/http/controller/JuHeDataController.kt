@@ -19,7 +19,7 @@ interface JuHeDataController {
     /**
      * 获取笑话数据
      */
-    @GET("http://v.juhe.cn/joke/content/list.php")
+    @GET("https://v.juhe.cn/joke/content/list.php")
     fun getJokeList(@Query("sort") sort: String, @Query("page") page: Int,
                              @Query("pagesize") pagesize: Int, @Query("time") time: String
                              , @Query("key") key: String): Observable<JokeEntity>
@@ -28,7 +28,7 @@ interface JuHeDataController {
     /**
      * 获取天气数据
      */
-    @GET("http://apis.juhe.cn/simpleWeather/query")
+    @GET("https://apis.juhe.cn/simpleWeather/query")
     fun getSimpleWeather(@Query("city") city: String, @Query("key") key: String): Observable<WeatherEntity>
 
 }

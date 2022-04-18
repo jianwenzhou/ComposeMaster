@@ -24,7 +24,7 @@ import java.util.*
  */
 
 @Composable
-fun MainCompose(finishActivity: () -> Unit) {
+fun MainCompose(finishActivity: () -> Unit , loadSplashPageData: () -> Unit = {}) {
 
     val tabs = remember { TabData.values() }
     val navController = rememberNavController()
@@ -36,7 +36,8 @@ fun MainCompose(finishActivity: () -> Unit) {
         JwNavGraph(
             modifier = Modifier.padding(innerPaddingModifier),
             finishActivity = finishActivity,
-            navController = navController
+            navController = navController,
+            loadSplashPageData = loadSplashPageData
         )
     }
 }

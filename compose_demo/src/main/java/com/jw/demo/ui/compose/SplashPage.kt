@@ -11,6 +11,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.jw.demo.model.MainViewModel
@@ -33,7 +34,8 @@ fun SplashPage(
         Text(
             text = weatherState.value?.result?.future?.first()?.weather ?: "",
             modifier = Modifier.align(Alignment.Center),
-            color = MaterialTheme.colors.primary
+            color = MaterialTheme.colors.primary,
+            fontWeight = FontWeight.Bold
         )
 
         Button(

@@ -59,6 +59,7 @@ class MainViewModel : ViewModel() {
                             _weatherLiveData.value = t
                         } else {
                             onError(t.reason, t.error_code)
+                            _weatherLiveData.value = t
                         }
                     }
 
